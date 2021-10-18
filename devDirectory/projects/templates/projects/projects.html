@@ -2,15 +2,21 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>devDirectory</title>
+        <title>TalentMine</title>
     </head>
     <body>
         {% extends 'main.html'%}
         {% block content %}
-        <h3>This will be the all projects page</h3>
-        <p>What is Lorem Ipsum? publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        <p>Why do we use it?versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        <p>e theory of ethics, very popular during the Renaissance. The first line of Lorem</p>
+        <hr>
+        <h1>Projects</h1>
+
+        <ul>
+            {% for project in projects%}
+                <li>Title: <a href="{%url 'project' project.id%}">{{project.title}} </a> ---{{project.description}}</li>
+            {%endfor%}
+        </ul>
+
+
         {% endblock content%}
     </body>
 </html>
