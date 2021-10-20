@@ -9,10 +9,18 @@
         {% block content %}
         <hr>
         <h1>Projects</h1>
-
         <ul>
             {% for project in projects%}
-                <li>Title: <a href="{%url 'project' project.id%}">{{project.title}} </a> ---{{project.description}}</li>
+                <table>
+                    <tr>
+                        <!-- <th>ID</th> {{project.id}} -->
+                        <th>Project  <a href="{%url 'project' project.id%}">{{project.title}} </a>  </th>
+                        <th>Votes {{project.vote_total}} </th>
+                        <th>Ratio  {{project.vote_ratio}}% </th>
+                        <th> <a href="{%url 'update-project' project.id%}">Edit</a></th>
+                        <th> <a href="{% url 'delete-project' project.id%}">Delete</a></th>
+                    </tr>
+                </table>
             {%endfor%}
         </ul>
 

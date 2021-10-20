@@ -8,12 +8,13 @@
         {%extends 'main.html'%}
 
         {%block content %}
-
-        {%if project is not None %}
-            <h1>{{project.title}}</h1>
-            <p>{{project.description}}</p>
-        {%endif%}
-
+        <h1>{{project.title}}</h1>
+        <p>{{project.description}}</p>
+        <hr>
+        {%for tag in project.tags.all%}
+        <span style="border:1px solid grey">{{tag}}</span>
+        {%endfor%}
+        <hr>
         {%endblock content%}
     </body>
 </html>
