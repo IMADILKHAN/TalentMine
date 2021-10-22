@@ -9,6 +9,8 @@
 
         {%block content %}
         <h1>{{project.title}}</h1>
+        <img style="max-width:500px;"src="{{ project.featured_image.url }}" alt="">
+
         <p>{{project.description}}</p>
         <hr>
         {%for tag in project.tags.all%}

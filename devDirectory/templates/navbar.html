@@ -1,3 +1,5 @@
-<h1><a href="/" style="text-decoration:none"> LOGO </a></h1>
-<a href="{%url 'create-project'%}"> Add Project</a>
+{%load static%}
+
+<a href="/" style="text-decoration:none"><img src="{% static 'images/logo.svg'%}" alt="" style="height:70px;"></a>
+<a  style="float:right"href="{%url 'create-project'%}"> Add Project</a>
 <hr>
