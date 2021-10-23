@@ -1,5 +1,28 @@
 {%load static%}
-
-<a href="/" style="text-decoration:none"><img src="{% static 'images/logo.svg'%}" alt="" style="height:70px;"></a>
-<a  style="float:right"href="{%url 'create-project'%}"> Add Project</a>
-<hr>
+<!-- <div id="navbar">
+    <img id="nav-logo"src="{% static 'images/logo.svg'%}">
+    <a  style="float:right"href="{%url 'create-project'%}"> Add Project</a>
+</div>
+<hr> -->
+<header class="header">
+  <div class="container container--narrow">
+    <a href="/" class="header__logo">
+      <img id="nav-logo" src="{% static 'images/logo.png'%}" alt="TalentMine" />
+    </a>
+    <nav class="header__nav">
+      <input type="checkbox" id="responsive-menu" />
+      <label for="responsive-menu" class="toggle-menu">
+        <span>Menu</span>
+        <div class="toggle-menu__lines"></div>
+      </label>
+      <ul class="header__menu">
+        <li class="header__menuItem"><a href="">Hire</a></li>
+        <li class="header__menuItem"><a href="/project">Explore Talent</a></li>
+        <li class="header__menuItem"><a href="">Inbox</a></li>
+        <li class="header__menuItem"><a href="">My Account</a></li>
+        <li class="header__menuItem"><a href="{%url 'create-project'%}" class="btn btn--sub">Add Project</a></li>
+        <li class="header__menuItem"><a href="" class="btn btn--sub">Login/Sign Up</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

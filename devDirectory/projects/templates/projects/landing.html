@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>TalentMine</title>
+    </head>
+    <body>
+        {% extends 'main.html'%}
+        {% block content %}
+        {%load static%}
+        <div id='landing-container'>
+
+            <div id='landing-text'>
+
+            <h1 id="heading-landing">Join the world’s largest talent community</h1>
+            <p id="para-landing">Experience the shift of the hiring industry towards talent.</p>
+            </div>
+
+            <div id="landing-cols">
+
+            <!-- recruit -->
+            <div id='recruit-talent'>
+                    <div class="styles_businessUnit__3KlX6">
+            <div class="styles_unitTitle__3eW7l">
+              <img id="talent-landing" src="{% static 'images/hireTalent.png'%}" alt="">
+                <h2 class="styles_headingMedium__2nH3y styles_unitHeading__3Pd2e">Hire Talent</h2>
+              </div>
+              <p class="landing-para">Apply privately to 130,000+ tech &amp; startup
+                with one application. See salary and equity upfront.</p>
+                <a class="anchor-landing"href="/project/">Hire Talent</a>
+            </div>
+                </div>
+
+            <!-- explore -->
+            <div id='recruit-talent'>
+                    <div class="styles_businessUnit__3KlX6">
+            <div class="styles_unitTitle__3eW7l">
+              <img id="talent-landing" src="{% static 'images/explore.png'%}" alt="">
+                <h2 class="styles_headingMedium__2nH3y styles_unitHeading__3Pd2e">Explore Talent</h2>
+              </div>
+              <p class="landing-para">Apply privately to 130,000+ tech &amp; startup
+                with one application. See salary and equity upfront.</p>
+                <a class="anchor-landing"href="/project/" >Explore Talent</a>
+            </div>
+                </div>
+            </div>
+
+        </div>
+
+        {%endblock content%}
+    </body>
+</html>

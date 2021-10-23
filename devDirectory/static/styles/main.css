@@ -1,3 +1,231 @@
-body{
-    
+#heading-landing{
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    color: #000;
+    text-align: center;
+    box-sizing: inherit;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    font-family: Founders Grotesk, sans-serif;
+    line-height: 1.05;
+    font-weight: 800;
+    font-size: 70px;
+    white-space: pre-line;
+    margin-bottom: 24px;
+}
+
+#para-landing{
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    color: #000;
+    text-align: center;
+    box-sizing: inherit;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    display: block;
+    max-width: 80%;
+
+}
+
+#landing-container{
+    -webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+text-size-adjust: 100%;
+color: #000;
+box-sizing: inherit;
+border: 0;
+font: inherit;
+font-size: 100%;
+vertical-align: baseline;
+width: 100%;
+max-width: 1136px;
+margin: 0 auto;
+text-align: center;
+padding: 0 32px;
+}
+
+#landing-text{
+    -webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+text-size-adjust: 100%;
+color: #000;
+text-align: center;
+box-sizing: inherit;
+border: 0;
+font: inherit;
+font-size: 100%;
+vertical-align: baseline;
+margin: 0 auto;
+width: 80%;
+padding: 88px 0;
+}
+
+#navbar{
+    -webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+text-size-adjust: 100%;
+color: #162040;
+margin: 0;
+padding: 0;
+border: 0;
+font: inherit;
+font-size: 100%;
+vertical-align: baseline;
+box-sizing: border-box;
+float: left;
+padding-left: 14px;
+padding-right: 14px;
+position: relative;
+width: 100%;
+}
+
+#nav-logo{
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    text-align: center;
+    aspect-ratio: auto 800 / 600;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    font-size: 9px;
+    color: transparent;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    -webkit-font-smoothing: antialiased;
+    height: auto;
+    margin-bottom: 4px;
+    width: 150px;
+}
+
+#landing-cols{
+    -webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+text-size-adjust: 100%;
+color: #000;
+text-align: center;
+box-sizing: inherit;
+border: 0;
+font: inherit;
+font-size: 100%;
+vertical-align: baseline;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+min-width: 0;
+min-height: 0;
+flex-wrap: wrap;
+padding: 0;
+justify-content: space-between;
+width: 67%;
+margin: 0 auto 144px auto;
+}
+#recruit-talent{
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    color: #000;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 0;
+    width: 47%;
+}
+
+.anchor-landing{
+    -webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+text-size-adjust: 100%;
+box-sizing: inherit;
+margin: 0;
+font: inherit;
+vertical-align: baseline;
+margin-top: 16px;
+font-family: Founders Grotesk, sans-serif;
+padding: 16px 32px;
+border-radius: 4px;
+text-align: center;
+border: none;
+background: #002e63;
+color: #fff;
+cursor: pointer;
+text-decoration: none;
+font-weight: 500;
+font-size: 20px;
+line-height: 1.5;
+}
+
+.styles_unitTitle__3eW7l{
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+text-size-adjust: 100%;
+color: #000;
+box-sizing: inherit;
+padding: 0;
+border: 0;
+font: inherit;
+font-size: 100%;
+vertical-align: baseline;
+text-align: center;
+display: block;
+margin: 0;
+width: 100%;
+}
+
+#talent-landing{
+text-rendering: optimizeLegibility;
+text-size-adjust: 100%;
+text-align: center;
+aspect-ratio: auto 65 / 65;
+width: 105px;
+box-sizing: inherit;
+margin: 0;
+padding: 0;
+border: 0;
+font: inherit;
+vertical-align: baseline;
+font-size: 15px;
+color: transparent;
+line-height: 1.5;
+text-overflow: ellipsis;
+-webkit-font-smoothing: antialiased;
+height: auto;
+max-height: 105px;
+}
+.landing-para{
+    -webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+text-size-adjust: 100%;
+text-align: center;
+box-sizing: inherit;
+border: 0;
+font: inherit;
+font-size: 100%;
+vertical-align: baseline;
+margin: 0;
+padding: 0;
+color: #000;
+margin-bottom: 30px;
+cursor: default;
 }
