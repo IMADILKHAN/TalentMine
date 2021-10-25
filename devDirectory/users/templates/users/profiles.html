@@ -1,5 +1,65 @@
 {%extends 'main.html'%}
 
 {%block content%}
-    <h1>Users Profiles</h1>
+
+<main class="home">
+  <section class="hero-section text-center" style="background-color:#e1e1f7;height:30vh;">
+    <div class="container container--narrow">
+      <div class="hero-section__box">
+          <h3 >Find & Hire the best workers from around the globe to build your team </h3>
+          <h5 style="padding-top:10px">Hire The Best</h5>
+      </div>
+
+      <div class="hero-section__search">
+        <form class="form" action="#" method="get">
+          <div class="form__field">
+            <label for="formInput#search">Search Developers </label>
+            <input class="input input--text" id="formInput#search" type="text" name="text"
+              placeholder="Search by name" />
+          </div>
+
+          <input class="btn btn--sub btn--lg" type="submit" value="Search" />
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Search Result: DevList -->
+  <section class="devlist">
+    <div class="container">
+      <div class="grid grid--three">
+
+          {%for profile in profiles%}
+          <div class="column card">
+            <div class="dev">
+              <a href="" class="card__body">
+                <div class="dev__profile">
+                  <img class="avatar avatar--md" src="{{profile.profile_image.url}}" alt="image" />
+                  <div class="dev__meta">
+                    <h3>{{profile.name}}</h3>
+                    <h5>{{profile.short_intro|slice:'50'}}</h5>
+                  </div>
+                </div>
+                <p class="dev__info">
+                  {{profile.bio|slice:"180"}}
+                </p>
+                <div class="dev__skills">
+
+                  <span class="tag tag--pill tag--main">
+                    <small>JavaScript</small>
+                  </span>
+
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {%endfor%}
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
 {%endblock content%}
