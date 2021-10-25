@@ -1,9 +1,4 @@
 {%load static%}
-<!-- <div id="navbar">
-    <img id="nav-logo"src="{% static 'images/logo.svg'%}">
-    <a  style="float:right"href="{%url 'create-project'%}"> Add Project</a>
-</div>
-<hr> -->
 <header class="header">
   <div class="container container--narrow">
     <a href="/" class="header__logo">
@@ -16,11 +11,11 @@
         <div class="toggle-menu__lines"></div>
       </label>
       <ul class="header__menu">
-        <li class="header__menuItem"><a href="">Hire</a></li>
+        <li class="header__menuItem"><a href="/users">Hire</a></li>
         <li class="header__menuItem"><a href="/project">Explore Talent</a></li>
         <li class="header__menuItem"><a href="">Inbox</a></li>
         <li class="header__menuItem"><a href="">My Account</a></li>
-        <li class="header__menuItem"><a href="{%url 'create-project'%}" class="btn btn--sub">Add Project</a></li>
+        <li class="header__menuItem"><a href="{%url 'create-project'%}" class="btn btn--sub">Showcase Talent</a></li>
         <li class="header__menuItem"><a href="" class="btn btn--sub">Login/Sign Up</a></li>
       </ul>
     </nav>
