@@ -10,15 +10,14 @@
         <span>Menu</span>
         <div class="toggle-menu__lines"></div>
       </label>
-      <ul class="header__menu">
+      <ul class="header__menu" style="background-color:#002147">
         <li class="header__menuItem"><a href="/users">Hire</a></li>
         <li class="header__menuItem"><a href="/project">Explore Talent</a></li>
         <li class="header__menuItem"><a href="">Inbox</a></li>
         <li class="header__menuItem"><a href="">My Account</a></li>
         <li class="header__menuItem"><a href="{%url 'create-project'%}" >Showcase Talent</a></li>
-
         {%if request.user.is_authenticated%}
-            <li class="header__menuItem"><a href="{%url 'login'%}" class="btn btn--sub">Logout</a></li>
+            <li class="header__menuItem"><a href="{%url 'logout'%}" class="btn btn--sub">Logout</a></li>
         {%else%}
             <li class="header__menuItem"><a href="{%url 'login'%}" class="btn btn--sub">Login/Signup</a></li>
         {%endif%}

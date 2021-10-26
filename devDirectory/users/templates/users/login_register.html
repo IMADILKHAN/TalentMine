@@ -1,14 +1,73 @@
 {%extends 'main.html'%}
 
 {%block content%}
+{%load static%}
+{%if page == 'register'%}
 
-<form action="{% url 'login'%}" method="POST">
+    <h1>Register New User</h1>
+    <form method="POST" action="{%url 'register'%}">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" name="" value="Register User">
+    </form>
+    <p>Already have an account? <a href="{%url 'login'%}">Login</a> </p>
+{%else%}
+
+<!-- <form action="{% url 'login'%}" method="POST">
     {%csrf_token %}
     <input type="text" name="username" placeholder="username">
     <input type="password" name="password" placeholder="password">
     <input type="submit" >
 
-</form>
+    <p>New to the website? <a href="{%url 'register'%}">Signup</a> </p>
+</form> -->
+<div class="auth">
+  <div class="card">
+    <div class="auth__header text-center">
+      <a href="/">
+        <img src="{% static 'images/logo2.jpg'%}" alt="icon" />
+      </a>
+      <h3>Account Login</h3>
+      <p>Hello User, Welcome Back!</p>
+    </div>
+
+    <form action="#" class="form auth__form">
+      <!-- Input:Email -->
+      <div class="form__field">
+        <label for="formInput#text">Username: </label>
+        <input
+          class="input input--text"
+          id="formInput#text"
+          type="text"
+          name="username"
+          placeholder="Enter your username..."
+        />
+      </div>
+
+      <!-- Input:Password -->
+      <div class="form__field">
+        <label for="formInput#password">Password: </label>
+        <input
+          class="input input--password"
+          id="formInput#passowrd"
+          type="password"
+          name="password"
+          placeholder="••••••••"
+        />
+      </div>
+      <div class="auth__actions">
+        <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
+        <a href="forgetpassword.html">Forget Password?</a>
+      </div>
+    </form>
+    <div class="auth__alternative">
+      <p>Don’t have an Account?</p>
+      <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+{%endif%}
 
 
 
