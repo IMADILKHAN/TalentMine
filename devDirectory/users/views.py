@@ -32,7 +32,7 @@ def loginUser(request):
 
 def logoutUser(request):
     logout(request)
-    messages.error(request,'User logged Out')
+    messages.info(request,'User logged Out')
     return redirect('login')
 
 def registerUser(request):

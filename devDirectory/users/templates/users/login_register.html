@@ -4,23 +4,60 @@
 {%load static%}
 {%if page == 'register'%}
 
-    <h1>Register New User</h1>
+    <!-- <h1>Register New User</h1>
     <form method="POST" action="{%url 'register'%}">
         {%csrf_token%}
         {{form.as_p}}
         <input type="submit" name="" value="Register User">
     </form>
     <p>Already have an account? <a href="{%url 'login'%}">Login</a> </p>
+ -->
+ <div class="auth" style="margin:30px;">
+   <div class="card">
+     <div class="auth__header text-center">
+       <a href="/">
+         <img src="{% static 'images/logo2.jpg'%}"  alt="icon" />
+       </a>
+       <h3>Account SignUp</h3>
+       <p>Create a new developer account</p>
+     </div>
+
+     <form method="POST" action="{%url 'register'%}" class="form auth__form" >
+         {%csrf_token%}
+
+        {%for field in form%}
+
+        <div class="form__field">
+          <label for="formInput#text">{{field.label}}: </label>
+          {{field}}
+          {%if field.help_text%}
+          <!-- <small>{{field.help_text}}</small> -->
+
+          {%for error in field.errors%}
+            <p style="color:red">{{error}}</p>
+          {%endfor%}
+          {% endif %}
+        </div>
+
+        {%endfor%}
+
+
+       <!-- Input:Text -->
+
+
+       <div class="auth__actions">
+         <input class="btn btn--sub btn--lg" type="submit" value="Sign  In" />
+       </div>
+     </form>
+     <div class="auth__alternative">
+       <p>Already have an Account?</p>
+       <a href="{%url 'login'%}">Log In</a>
+     </div>
+   </div>
+ </div>
+
 {%else%}
-
-<!-- <form action="{% url 'login'%}" method="POST">
-    {%csrf_token %}
-    <input type="text" name="username" placeholder="username">
-    <input type="password" name="password" placeholder="password">
-    <input type="submit" >
-
-    <p>New to the website? <a href="{%url 'register'%}">Signup</a> </p>
-</form> -->
+<!-- LOGIN FORM -->
 <div class="auth">
   <div class="card">
     <div class="auth__header text-center">
@@ -31,7 +68,8 @@
       <p>Hello User, Welcome Back!</p>
     </div>
 
-    <form action="#" class="form auth__form">
+    <form action="{% url 'login'%}" method="POST" class="form auth__form">
+        {%csrf_token%}
       <!-- Input:Email -->
       <div class="form__field">
         <label for="formInput#text">Username: </label>
@@ -62,7 +100,7 @@
     </form>
     <div class="auth__alternative">
       <p>Don’t have an Account?</p>
-      <a href="signup.html">Sign Up</a>
+      <a href="{%url 'register'%}">Sign Up</a>
     </div>
   </div>
 </div>
