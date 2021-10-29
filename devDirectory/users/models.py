@@ -39,6 +39,7 @@ class Message(models.Model):
     recipient = models.ForeignKey(Profile,on_delete=models.SET_NULL,null=True,blank=True,related_name="messages")
     name = models.CharField(max_length=200,null=True,blank=True)
     email = models.EmailField(max_length=200,null=True,blank=True)
+    subject = models.CharField(max_length=600,null=True,blank=True)
     body = models.TextField()
     is_read = models.BooleanField(default=False,null=True)
     created = models.DateTimeField(auto_now_add=True)

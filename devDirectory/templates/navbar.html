@@ -13,8 +13,8 @@
       <ul class="header__menu" style="background-color:#002147">
         <li class="header__menuItem"><a href="/users">Hire</a></li>
         <li class="header__menuItem"><a href="/project">Explore Talent</a></li>
-        <li class="header__menuItem"><a href="">Inbox</a></li>
         {%if request.user.is_authenticated%}
+            <li class="header__menuItem"><a href="{%url 'inbox'%}">Inbox</a></li>
             <li class="header__menuItem"><a href="{%url 'account'%}">My Account</a></li>
             <li class="header__menuItem"><a href="{%url 'logout'%}" class="btn btn--sub">Logout</a></li>
         {%else%}
