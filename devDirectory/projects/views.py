@@ -2,10 +2,9 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-
 from .models import Project,Tag
-from .forms import ProjectForm
-
+from .forms import ProjectForm,ReviewForm
+from .utils import searchProject
 
 
 def landing(request):
@@ -13,25 +12,26 @@ def landing(request):
     return render(request,'projects/landing.html',context)
 
 def projects(request):
-    search_query = ''
-    if request.GET.get('search_query'):
-        search_query = request.GET.get('search_query')
-    tag = Tag.objects.filter(name__icontains=search_query)
-    projects = Project.objects.distinct().filter(
-        Q(title__icontains=search_query)|
-        Q(description__icontains=search_query)|
-        Q(owner__name__icontains=search_query)|
-        Q(tags__in=tag)
-    )
+    search_query,projects = searchProject(request)
     context = {'projects':projects,'search_query':search_query}
     return render(request,'projects/projects.html',context)
 
 def project(request,pk):
     projectObj = Project.objects.get(id=pk)
-    # tags = projectObj.tags.all()
+    form = ReviewForm()
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        review = form.save(commit=False)
+        review.project = projectObj
+        review.owner = request.user.profile
+        review.save()
+        projectObj.getVoteCount
+        return redirect('project',pk=projectObj.id)
+
     context = {
         'project':projectObj,
-        # 'tags':tags,
+        'form':form,
+
     }
     return render(request,'projects/single-project.html',context)
 

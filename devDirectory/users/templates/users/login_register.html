@@ -4,14 +4,6 @@
 {%load static%}
 {%if page == 'register'%}
 
-    <!-- <h1>Register New User</h1>
-    <form method="POST" action="{%url 'register'%}">
-        {%csrf_token%}
-        {{form.as_p}}
-        <input type="submit" name="" value="Register User">
-    </form>
-    <p>Already have an account? <a href="{%url 'login'%}">Login</a> </p>
- -->
  <div class="auth" style="margin:30px;">
    <div class="card">
      <div class="auth__header text-center">
@@ -21,30 +13,21 @@
        <h3>Account SignUp</h3>
        <p>Create a new developer account</p>
      </div>
-
      <form method="POST" action="{%url 'register'%}" class="form auth__form" >
          {%csrf_token%}
-
         {%for field in form%}
-
         <div class="form__field">
           <label for="formInput#text">{{field.label}}: </label>
           {{field}}
           {%if field.help_text%}
           <!-- <small>{{field.help_text}}</small> -->
-
           {%for error in field.errors%}
             <p style="color:red">{{error}}</p>
           {%endfor%}
           {% endif %}
         </div>
-
         {%endfor%}
-
-
        <!-- Input:Text -->
-
-
        <div class="auth__actions">
          <input class="btn btn--sub btn--lg" type="submit" value="Sign  In" />
        </div>
@@ -104,9 +87,5 @@
     </div>
   </div>
 </div>
-
 {%endif%}
-
-
-
 {%endblock%}
