@@ -25,7 +25,7 @@ SECRET_KEY = '0t9x-yjxz^(_^4=o22gl6&!-g7j$s^@renmawcbo8+yp7din(p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','talentmine.herokuapp.com']
 
 
 # Application definition
@@ -79,10 +79,24 @@ WSGI_APPLICATION = 'devDirectory.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+# SQLlite DATABASE
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# postgresql database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql' ,
+        'NAME': 'TalentMine' ,
+        'USER':'postgres',
+        'PASSWORD':'YOYOadil14*',
+        'HOST':'localhost',
+        'PORT':'5400'
     }
 }
 
@@ -138,3 +152,8 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+
+
+if os.getcwd() == '/app':
+    DEBUG = FALSE
