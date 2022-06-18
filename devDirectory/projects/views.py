@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Project,Tag
 from .forms import ProjectForm,ReviewForm
-from .utils import searchProject
+from .utils import searchProject,paginateProjects
 
 
 def landing(request):
@@ -13,7 +13,10 @@ def landing(request):
 
 def projects(request):
     search_query,projects = searchProject(request)
-    context = {'projects':projects,'search_query':search_query}
+
+    custom_range,projects = paginateProjects(request,projects,3)
+
+    context = {'projects':projects,'search_query':search_query,'custom_range':custom_range}
     return render(request,'projects/projects.html',context)
 
 def project(request,pk):

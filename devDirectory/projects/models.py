@@ -19,12 +19,12 @@ class Project(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering=['-vote_ratio','-vote_total','title']
+        ordering=['-created','-vote_ratio','-vote_total','title']
 
     @property
     def reviewers(self):
         queryset = self.review_set.all().values_list('owner__id',flat=True)
-        return queryset 
+        return queryset
 
     @property
     def getVoteCount(self):
