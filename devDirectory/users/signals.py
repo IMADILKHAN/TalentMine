@@ -19,12 +19,12 @@ def createProfile(sender,instance,created,**kwargs):
             name=user.first_name
             )
         subject = 'Welcome to TalentMine!'
-        message = 'Welcome to the TalentMine!,We at TalentMine are trying to make largest group of talented individuals to give them a platform to showcase there skills and get hired.'
+        message = 'Welcome to the TalentMine! Our mission with talentmine is to make the hiring process easier.'
         send_mail(
             subject,
             message,
             settings.EMAIL_HOST_USER,
-            [profile.email], 
+            [profile.email],
             fail_silently=False,
         )
 
