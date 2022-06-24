@@ -11,6 +11,10 @@ def landing(request):
     context = {}
     return render(request,'projects/landing.html',context)
 
+def feed(request):
+    context = {}
+    return render(request,'projects/feed.html',context)
+
 def projects(request):
     search_query,projects = searchProject(request)
 
