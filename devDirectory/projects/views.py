@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Project,Tag
-from .forms import ProjectForm,ReviewForm
-from .utils import searchProject,paginateProjects
+from .forms import ProjectForm,ReviewForm,PostForm
+from .utils import searchProject,paginateProjects,getPosts
 
 
 def landing(request):
@@ -12,7 +12,10 @@ def landing(request):
     return render(request,'projects/landing.html',context)
 
 def feed(request):
-    context = {}
+    posts = getPosts(request)
+    user = request.user.profile
+    context = {'posts':posts,'user':user}
+
     return render(request,'projects/feed.html',context)
 
 def projects(request):
@@ -41,6 +44,20 @@ def project(request,pk):
 
     }
     return render(request,'projects/single-project.html',context)
+
+@login_required(login_url = 'login')
+def uploadPost(request):
+    profile = request.user.profile
+    form = PostForm()
+    if request.method == 'POST':
+        form = PostForm(request.POST,request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = profile
+            post.save()
+            return redirect('feed')
+    context = {'form':form}
+    return render(request,"projects/post_form.html",context)
 
 @login_required(login_url="login")
 def createProject(request):

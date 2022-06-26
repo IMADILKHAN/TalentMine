@@ -3,8 +3,138 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <style media="screen">
+        body{
+            background-color:#e1e1f7!important;
+        }
+        </style>
     </head>
     <body>
-        <h1>This is feed</h1>
+
+        {%extends 'main.html'%}
+        {% block content %}
+        {%load static%}
+        <div class="body__main">
+
+
+        <!-- side bar section-->
+            <div class="sidebar">
+                    <div class="sidebar__top">
+                            <img src="{{user.profile_image.url}}" alt="">
+                            <span class="material-symbols-outlined sidebar__topAvatar">account_circle</span>
+                            <h2>{{user.name}}</h2>
+                            <h4>{{user.email}}</h4>
+                    </div>
+
+                    <div class="sidebar__stats">
+
+                        <div class="sidebar__stat">
+                            <p>some stats willl decide later</p>
+                            <p class="sidebar__stat"> 2453 </p>
+                        </div>
+
+                        <div class="sidebar__stat">
+                            <p>some stats willl decide later</p>
+                            <p class="sidebar__stat"> 1243 </p>
+                        </div>
+
+                    </div>
+            </div>
+        <!-- side bar ends -->
+
+        <!-- Feed Starts -->
+            <div class="feed" >
+
+                <div class="feed__inputContainer">
+
+                        <div class="feed_input">
+                            <span class="material-symbols-outlined">edit</span>
+                            <form >
+                                <input type="text" name="" value="">
+                            </form>
+                        </div>
+
+
+
+                        <div class="feed__inputOptions">
+
+                            <div class="inputOption">
+                                <span style="color:#70b5f9;" class="material-symbols-outlined" >image</span>
+                                <h6>photo</h6>
+                            </div>
+
+                            <div class="inputOption">
+                                <span style="color:#e7a33e;" class="material-symbols-outlined">movie</span>
+                                <h6>video</h6>
+                            </div>
+                            <div class="inputOption">
+                                <span style="color:#c0cbcd;" class="material-symbols-outlined" >calendar_month</span>
+                                <h6>Event</h6>
+                            </div>
+                            <div class="inputOption">
+                                <span style="color:#7fc15e;" class="material-symbols-outlined">article</span>
+                                <h6>Article</h6>
+                            </div>
+                        </div>
+                </div>
+
+                <!-- posts starts -->
+                {% for post in posts%}
+                <div class="post">
+                    <div class="post__header">
+                        <span class="material-symbols-outlined sidebar__topAvatar">account_circle</span>
+                        <div class="post_info">
+                            <h2>{{post.user}}</h2>
+                            <p>Job Description</p>
+                        </div>
+                    </div>
+
+                    <div class="post__body">
+                        <img class="project__thumbnail" src="{{ post.image.url }}" alt="project thumbnail" />
+                        <p style="margin-top:20px;">{{post.caption}}</p>
+                    </div>
+
+                    <div class="feed__inputOptions">
+                        <div class="inputOption">
+                            <span style="color:grey" class="material-symbols-outlined">favorite</span>
+                            <h6>Like</h6>
+                        </div>
+                        <div class="inputOption">
+                            <span style="color:grey" class="material-symbols-outlined">comment</span>
+                            <h6>Comment</h6>
+                        </div>
+                    </div>
+
+                </div>
+                {%endfor%}
+
+
+
+
+                <!-- Posts end -->
+            </div>
+        <!-- Feed Ends -->
+
+
+        </div>
+        {%endblock content%}
     </body>
 </html>
+
+
+<!-- {% for poost in posts%}
+  <div class="grid-item" style="margin-top:10%;">
+    <div class="card project">
+        <img class="project__thumbnail" src="{{ poost.image.url }}" alt="project thumbnail" />
+        <div class="card__body">
+          <p >{{poost.caption}}</p>
+          <span > Posted By:- {{poost.user}}</span>
+           <span style="font-weight: bold;">{{poost.no_of_likes}}</span>
+        </div>
+    </div>
+  </div>
+
+  {%endfor%} -->
+<!-- <div class="auth" > -->

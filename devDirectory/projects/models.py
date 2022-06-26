@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 from users.models import Profile
+from datetime import datetime
 # Create your models here.
 
 
@@ -63,3 +64,19 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+# adding posts for feed
+
+class Post(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    user = models.CharField(max_length = 100)
+    image = models.ImageField(null=True,blank=True,default="default.jpg")
+    caption = models.TextField()
+    created_at = models.DateTimeField(default=datetime.now)
+    no_of_like = models.IntegerField(default=0)
+
+
+    def __str__(self):
+        return self.user

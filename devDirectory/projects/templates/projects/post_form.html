@@ -8,10 +8,9 @@
 
         <div class="formWrapper">
             <a class="backButton" href="#"><i class="im im-x-mark-circle"></i></a>
-            <h5 style="text-align:center">Add Work Details</h5>
+            <h5 style="text-align:center">Create Post</h5>
             <form class="form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-
                 <!-- Input:Text -->
 
                 {%for field in form%}
@@ -21,10 +20,6 @@
                     </div>
                 {%endfor%}
 
-                <div class="form__field">
-                    <label for="formInput#text">Tags: </label>
-                        <textarea class="input" name="newtags" placeholder="Add tags.."></textarea>
-                    </div>
 
                 <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
             </form>

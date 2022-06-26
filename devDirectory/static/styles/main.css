@@ -229,3 +229,167 @@ color: #000;
 margin-bottom: 30px;
 cursor: default;
 }
+
+
+
+
+/* ====CSS for feed section==== */
+
+.body__main{
+    display: flex;
+    max-width: 1200px;
+    margin:20px;
+
+}
+
+/* ====This is the side bar section*/
+
+/* sidebar top */
+.sidebar{
+    position: sticky;
+    top: 80px;
+    flex: 0.3;
+    border-radius:10px;
+    text-align: center;
+    height: fit-content;
+}
+
+.sidebar__top img{
+    margin-bottom: 20px;
+    width: 100%;
+    height: 60px;
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+
+}
+
+.sidebar__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: white;
+    padding-bottom: 10px;
+
+}
+
+
+.sidebar__topAvatar{
+    font-size: 40px;
+}
+
+.sidebar__stats{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    border-bottom-right-radius:10px;
+}
+
+.sidebar__stat{
+    margin-top: 10px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.sidebar__top h4 {
+    color: gray;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.sidebar__top h2 {
+    font-size: 18px;
+}
+
+
+/* feed section */
+
+.feed{
+    flex: 0.7;
+    margin:0 20px;
+}
+
+.feed__inputContainer{
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px
+}
+
+.feed_input {
+    border: 1px solid lightgrey;
+    border-radius: 30px;
+    display: flex;
+    padding: 10px;
+    color: gray;
+    padding-left: 15px;
+
+}
+
+.feed_input form {
+    display: flex;
+    width: 100%;
+}
+
+.feed_input form input {
+    border: none;
+    flex:1;
+    margin-left: 10px;
+    outline-width: 0;
+    font-weight: 600;
+}
+
+.feed__inputOptions{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputOption {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    color:gray;
+    padding: 10px;
+    cursor:pointer;
+}
+
+.inputOption:hover{
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.inputOption h6{
+    margin-left: 5px;
+}
+
+/* posts section */
+
+.post{
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.post__header{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.post_info{
+    margin-left: 10px;
+}
+
+.post_info p{
+    font-size: 12px;
+}
+
+.post_info h2 {
+    font-size: 15px;
+}

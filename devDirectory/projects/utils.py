@@ -1,4 +1,4 @@
-from .models import Project,Tag
+from .models import Project,Tag,Post
 from django.db.models import Q
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 
@@ -14,6 +14,10 @@ def searchProject(request):
         Q(tags__in=tag)
     )
     return search_query,projects
+
+def getPosts(request):
+    posts = Post.objects.all()
+    return posts
 
 def paginateProjects(request,projects,results):
     page = request.GET.get('page')
