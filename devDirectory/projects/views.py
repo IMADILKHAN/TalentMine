@@ -13,7 +13,10 @@ def landing(request):
 
 def feed(request):
     posts = getPosts(request)
-    user = request.user.profile
+    if request.user.is_authenticated:
+        user = request.user.profile
+    else:
+        user = None
     context = {'posts':posts,'user':user}
 
     return render(request,'projects/feed.html',context)

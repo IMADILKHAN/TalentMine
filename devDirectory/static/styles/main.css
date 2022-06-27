@@ -238,7 +238,9 @@ cursor: default;
 .body__main{
     display: flex;
     max-width: 1200px;
-    margin:20px;
+    margin-left:10%;
+    margin-top: 2%;
+
 
 }
 
@@ -392,4 +394,13 @@ cursor: default;
 
 .post_info h2 {
     font-size: 15px;
+}
+
+#likeBtn{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48;
+  color: red;
 }

@@ -5,11 +5,19 @@
         <title></title>
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <style media="screen">
         body{
             background-color:#e1e1f7!important;
         }
         </style>
+
+        <script type="text/javascript">
+            function toggleLikeBtn(){
+                document.getElementById("like").id = "likeBtn";
+                console.log('changed');
+            }
+        </script>
     </head>
     <body>
 
@@ -24,8 +32,12 @@
                     <div class="sidebar__top">
                             <img src="{{user.profile_image.url}}" alt="">
                             <span class="material-symbols-outlined sidebar__topAvatar">account_circle</span>
-                            <h2>{{user.name}}</h2>
-                            <h4>{{user.email}}</h4>
+                            {% if user%}
+                                <h2>{{user.name}}</h2>
+                                <h4>{{user.email}}</h4>
+                            {%endif%}
+
+
                     </div>
 
                     <div class="sidebar__stats">
@@ -46,7 +58,7 @@
 
         <!-- Feed Starts -->
             <div class="feed" >
-
+                <a href="feed/upload" style="width:100%">
                 <div class="feed__inputContainer">
 
                         <div class="feed_input">
@@ -55,9 +67,6 @@
                                 <input type="text" name="" value="">
                             </form>
                         </div>
-
-
-
                         <div class="feed__inputOptions">
 
                             <div class="inputOption">
@@ -79,6 +88,7 @@
                             </div>
                         </div>
                 </div>
+                </a>
 
                 <!-- posts starts -->
                 {% for post in posts%}
@@ -98,8 +108,9 @@
 
                     <div class="feed__inputOptions">
                         <div class="inputOption">
-                            <span style="color:grey" class="material-symbols-outlined">favorite</span>
-                            <h6>Like</h6>
+                            <span onclick="toggleLikeBtn()" id="like"  class="material-symbols-outlined">favorite</span>
+                            <!-- <span class="material-icons-outlined">favorite</span> -->
+                            <h6 onclick="toggleLikeBtn()">Like</h6>
                         </div>
                         <div class="inputOption">
                             <span style="color:grey" class="material-symbols-outlined">comment</span>
@@ -109,32 +120,12 @@
 
                 </div>
                 {%endfor%}
-
-
-
-
                 <!-- Posts end -->
             </div>
         <!-- Feed Ends -->
 
-
         </div>
         {%endblock content%}
+
     </body>
 </html>
-
-
-<!-- {% for poost in posts%}
-  <div class="grid-item" style="margin-top:10%;">
-    <div class="card project">
-        <img class="project__thumbnail" src="{{ poost.image.url }}" alt="project thumbnail" />
-        <div class="card__body">
-          <p >{{poost.caption}}</p>
-          <span > Posted By:- {{poost.user}}</span>
-           <span style="font-weight: bold;">{{poost.no_of_likes}}</span>
-        </div>
-    </div>
-  </div>
-
-  {%endfor%} -->
-<!-- <div class="auth" > -->
