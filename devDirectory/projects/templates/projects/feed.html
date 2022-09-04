@@ -96,7 +96,8 @@
                     <div class="post__header">
                         <span class="material-symbols-outlined sidebar__topAvatar">account_circle</span>
                         <div class="post_info">
-                            <h2>{{post.user}}</h2>
+                                <h2>{{post.user}}</h2>
+
                             <p>Job Description</p>
                         </div>
                     </div>
@@ -108,9 +109,27 @@
 
                     <div class="feed__inputOptions">
                         <div class="inputOption">
-                            <span onclick="toggleLikeBtn()" id="like"  class="material-symbols-outlined">favorite</span>
+                            <!-- <h5>{{post.liked_by}},{{post.id}},{{user.name}}</h5> -->
+                            <a href="/feed/like-post?post_id={{post.id}}">
+                                {%if user.name in post.liked_by and post.no_of_like > 0 %}
+                                    <!-- <h5>{{post.id}}{{user.name}}</h5> -->
+                                    <span  id="likeBtn"  class="material-symbols-outlined">favorite</span>
+                                    <!-- <h5>this is liked</h5> -->
+                                {%else%}
+                                    <span id="like" class="material-symbols-outlined">favorite</span>
+                                {%endif%}
+
+                            </a>
                             <!-- <span class="material-icons-outlined">favorite</span> -->
-                            <h6 onclick="toggleLikeBtn()">Like</h6>
+                            <a href="/feed/like-post?post_id={{post.id}}">
+                                {%if post.no_of_like == 0 %}
+                                    <h6 >Like</h6>
+                                {%elif post.no_of_like == 1 %}
+                                    <h6 >Liked by 1 other</h6>
+                                {%elif post.no_of_like > 1 %}
+                                    <h6>Liked by {{post.no_of_like}} others</h6>
+                                {%endif%}
+                            </a>
                         </div>
                         <div class="inputOption">
                             <span style="color:grey" class="material-symbols-outlined">comment</span>

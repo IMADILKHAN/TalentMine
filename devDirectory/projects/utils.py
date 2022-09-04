@@ -19,6 +19,10 @@ def getPosts(request):
     posts = Post.objects.all()
     return posts
 
+# def likePost(request):
+
+
+
 def paginateProjects(request,projects,results):
     page = request.GET.get('page')
     paginator = Paginator(projects,results)
