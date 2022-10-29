@@ -1,0 +1,67 @@
+        {%extends 'main.html'%}
+
+        {%block content %}
+
+        <main class="singleProject my-md">
+          <div class="container">
+            <div class="layout">
+              <div class="column column--1of3">
+                <h3 class="singleProject__subtitle" style="color:#5a5d6f;" >Skill Requirement</h3>
+
+                <div class="singleProject__toolStack">
+
+                    {%for tag in job.tags.all%}
+                    <span class="tag tag--pill  tag--lg" style="background-color:rgba(135, 56, 156,0.9)!important">
+                      <small style="color:white;">{{tag}}</small>
+                    </span>
+                    {%endfor%}
+                </div>
+
+                <div  class="icon_fin" style="margin-bottom:0.5rem!important;">
+                    <i style="size:3rem!important;" class="fa-solid fa-briefcase"></i>
+                    <h6 style="padding-left:15px!important;font-weight:500">{{job.job_type}}</h6>
+                </div>
+                {%if job.is_remote%}
+                    <div  class="icon_fin">
+                        <i style="size:3rem!important;" class="fa-solid fa-briefcase"></i>
+                        <h6 style="padding-left:15px!important;font-weight:500">Remote Possible</h6>
+                    </div>
+                {%else%}
+                    <div  class="icon_fin">
+                        <i style="size:3rem!important;" class="fa-solid fa-briefcase"></i>
+                        <h6 style="padding-left:15px!important;font-weight:500">In-Office</h6>
+                    </div>
+                {%endif%}
+
+
+                {%if job.apply_link%}
+                    <a  style="display:block;background-color:rgb(135, 56, 156);text-decoration:none;"class="btn btn--sub btn--mid" href="{{job.apply_link}}" target="_blank">
+                        Apply
+                    </a>
+                {%endif%}
+
+              </div>
+
+
+
+              <div class="column column--2of3">
+                  <iframe width="100%" height="70%"class="singleProject__preview" src="{{job.demo_video}}">
+                  </iframe>
+                <h2 class="singleProject__title"  style="color:#583461">{{job.title}}</h2>
+                <h3 class="singleProject__subtitle" style="color:#583461">About The Company</h3>
+                <div class="singleProject__info" style="color:#5a5d6f;">
+                  {{job.description}}
+                </div>
+
+                <h3 class="singleProject__subtitle" style=" margin-top:5%;color:#583461">Job Requirements</h3>
+                <div class="singleProject__info" style="color:#5a5d6f;">
+                  {{job.requirements}}
+                </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          </div>
+        </main>
+        {%endblock content%}

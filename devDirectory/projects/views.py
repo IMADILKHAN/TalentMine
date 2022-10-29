@@ -2,9 +2,9 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Project,Tag,LikePost,Post
+from .models import Project,Tag,LikePost,Post,Jobs
 from .forms import ProjectForm,ReviewForm,PostForm
-from .utils import searchProject,paginateProjects,getPosts
+from .utils import searchProject,paginateProjects,getPosts,getJobs,paginateJobs
 
 
 def landing(request):
@@ -22,6 +22,16 @@ def feed(request):
     context = {'posts':posts,'user':user}
 
     return render(request,'projects/feed.html',context)
+
+def jobPostings(request):
+    search_query,jobs = getJobs(request)
+    custom_range,jobs = paginateJobs(request,jobs,6)
+    context = {'jobs':jobs,'search_query':search_query,'custom_range':custom_range}
+    return render(request,'projects/jobs.html',context)
+
+def jobPosting(request,pk):
+    job = Jobs.objects.get(id=pk)
+    return render(request,'projects/job.html',{'job':job})
 
 def projects(request):
     search_query,projects = searchProject(request)

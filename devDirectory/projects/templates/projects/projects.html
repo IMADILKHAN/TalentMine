@@ -1,79 +1,174 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>TalentMine</title>
-    </head>
-    <body>
-        {% extends 'main.html'%}
-        {% block content %}
+{%extends 'main.html'%}
+
+{%block content%}
+{%load static%}
+<!-- <div class="left_block" style="min-height: 100%;width:20%!important;float:left;background-color:black!important">
+    <h3>this is left side</h3>
+</div> -->
 
 
-        <main class="projects">
-          <section class="hero-section text-center">
-            <div class="container container--narrow">
-              <div class="hero-section__box">
-                  <h4 style="padding: 20px;">Get amazed by the vast variety of work done by our skilled worker's from around the world </h4>
-                <h2>Find <span>Talent</span></h2>
-              </div>
+<div class="row" style="display:flex;height:1360px;background-color:rgba(130,36,227,0.035)!important;">
 
-              <div class="hero-section__search">
-                <form id ="searchForm" class="form" action="{% url 'projects'%}" method="get">
-                  <div class="form__field">
-                    <label for="formInput#search">Search By Projects </label>
-                    <input class="input input--text" id="formInput#search" type="text" name="search_query"
-                    value="{{search_query}}" placeholder="Search by Project Title" />
-                  </div>
+    <div class="col" style="flex:26%;height:100%">
 
-                  <input class="btn btn--sub btn--lg" type="submit" value="Search" />
-                </form>
-              </div>
-            </div>
-          </section>
-          <!-- Search Result: DevList -->
-          <section class="projectsList">
-            <div class="container">
-              <div class="grid grid--three">
-                  {% for project in projects%}
-                <div class="column">
-                  <div class="card project">
-                    <a href="{%url 'project' project.id%}" class="project">
-                      <img class="project__thumbnail" src="{{ project.featured_image.url }}" alt="project thumbnail" />
-                      <div class="card__body">
-                        <h3 class="project__title">{{project.title}}</h3>
-                        <p><a class="project__author" href="{% url 'user-profile' project.owner.id %}">By {{project.owner.name}}</a></p>
-                        <p class="project--rating">
-                          <span style="font-weight: bold;">{{project.vote_ratio}}%</span> Positive
-                          Feedback ({{project.vote_total}} Vote{{project.vote_total|pluralize:"s"}})
-                        </p>
-                        <div class="project__tags">
-                            {%for tag in project.tags.all%}
-                            <span class="tag tag--pill tag--main">
-                              <small>{{tag}}</small>
-                            </span>
-                            {%endfor%}
+        <div class="top-content" style="height:30%;background-color:#383a45;background-image: linear-gradient(135deg, #4f5261 0%, #383a45 50%);">
+            <a href="/">
+                <img style="left: auto;right: auto;display:block; " src="{% static 'images/logo_glow.png'%}" alt="TalentMine" />
+            </a>
 
+        </div>
+        <div class="bottom-content" style="height:70%;background-color:rgba(130,36,227,0.04)!important;-webkit-box-flex: 1;">
 
-                        </div>
-                      </div>
-                    </a>
-                  </div>
+            <div class="grid grid--two">
+                <div class="icon_container">
+                    <li class="icon_li">
+                        <a href="#" class="icon_fin" >
+                            <i class="fa-solid fa-house" ></i>
+                            <span class="below_icon">Home</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span class="below_icon">Jobs</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="below_icon">Users</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span class="below_icon">Login</span>
+                        </a>
+                    </li>
+                    <li class="icon_li">
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-message"></i>
+                            <span class="below_icon">Mails</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span class="below_icon">Home</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span class="below_icon">Home</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-briefcase" ></i>
+                            <span class="below_icon">Home</span>
+                        </a>
+                    </li>
                 </div>
 
-                {%endfor%}
 
 
 
-              </div>
             </div>
-          </section>
 
-          {%include 'pagination.html' with queryset=projects custom_range=custom_range%}
+        </div>
 
 
+    </div>
+
+    <div class="col" style="flex:74%;">
+        <main class="home" id="users-page">
+            <!-- <a href="/" class="header__logo" style="float:left">
+              <img style="margin-left:0px;" src="{% static 'images/logo3.png'%}" alt="TalentMine" />
+            </a> -->
+
+            <div class="top_users">
+
+                <!-- Search Form *IMPORTAT* -->
+                <div class="search_users">
+                    <div class="search_container">
+
+                        <form id ="searchForm" class="form" action="{% url 'projects'%}" method="get">
+                          <div class="form__field" style="width:100%;">
+                            <input class="input--box" id="formInput#search" type="text" name="search_query"
+                            value="{{search_query}}" placeholder="Search by Project Title" />
+                          </div>
+                        </form>
+
+                        <div class="" style="float:right!important;">
+                            {%if request.user.is_authenticated%}
+                            <a href="{%url 'logout'%}"  class="nav_links" >
+                                <i class="fa-solid fa-arrow-right-from-bracket" style="font-size:2.2rem;color:#8224e3!important;margin-right:35px;"></i>
+                            </a>
+                            <a href="{%url 'account'%}"  class="nav_links" >
+                                <i class="fa-regular fa-user" style="font-size:2.2rem;color:#8224e3;margin-right:35px;"></i>
+                            </a>
+                            <a href="{%url 'inbox'%}"  class="nav_links" >
+                                <i class="fa-regular fa-message" style="font-size:2.2rem;color:#8224e3;margin-right:35px;"></i>
+                            </a>
+
+                            {%else%}
+                                <a href="{%url 'login'%}"  class="nav_links" >
+                                    <i class="fa-solid fa-right-to-bracket" style="font-size:2.2rem;color:#8224e3;padding-right:50px!important;"></i>
+                                </a>
+
+                            {%endif%}
+                        </div>
+
+                    </div>
+                </div>
+
+                <section class="devlist" >
+                      <div class="container" >
+                          <div class="grid grid--two" style="padding-right:5%!important;">
+                              {% for project in projects%}
+                            <div class="column"  style="">
+                              <div class="card project">
+                                <a href="{%url 'project' project.id%}" class="project" >
+
+                                    <div id="card_container" style="color:rgba(0,0,0,0)">
+                                    <img style="min-block-size: 30rem;" id="project_card" class="project__thumbnail" src="{{ project.featured_image.url }}" alt="project thumbnail"  />
+                                        <div class="top-left">
+
+                                            By {{project.owner.name}}
+
+                                        </div>
+                                        <div class="centered">
+                                            <h3>
+                                                {{project.title}}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    </a>
+
+
+                                  <!-- <h3 class="project__title">{{project.title}}</h3> -->
+                                  <!-- <div class="card__body">
+                                    <h3 class="project__title">{{project.title}}</h3>
+                                    <p><a class="project__author" href="{% url 'user-profile' project.owner.id %}">By {{project.owner.name}}</a></p>
+                                    <p class="project--rating">
+                                      <span style="font-weight: bold;">{{project.vote_ratio}}%</span> Positive
+                                      Feedback ({{project.vote_total}} Vote{{project.vote_total|pluralize:"s"}})
+                                    </p>
+                                    <div class="project__tags">
+                                        {%for tag in project.tags.all%}
+                                        <span class="tag tag--pill tag--main">
+                                          <small>{{tag}}</small>
+                                        </span>
+                                        {%endfor%}
+
+
+                                    </div>
+                                  </div> -->
+
+                              </div>
+                            </div>
+
+                            {%endfor%}
+                          </div>
+
+                      </div>
+                      {%include 'pagination.html' with queryset=projects custom_range=custom_range%}
+                </section>
+
+            </div>
         </main>
+    </div>
+
+</div>
 
 
-        {% endblock content%}
-    </body>
-</html>
+{%endblock content%}

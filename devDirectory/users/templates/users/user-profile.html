@@ -9,9 +9,9 @@
         <div class="card text-center">
           <div class="card__body dev">
             <img class="avatar avatar--xl" src="{{profile.profile_image.url}}" style="border-radius:0px"/>
-            <h2 class="dev__name">{{profile.name}}</h2>
-            <p class="dev__title">{{profile.short_intro}}</p>
-            <p class="dev__location">Based in {{profile.location}}</p>
+            <h2 class="dev__name" style="color:#583461">{{profile.name}}</h2>
+            <p class="dev__title" style="color:#5a5d6f;">{{profile.short_intro}}</p>
+            <p class="dev__location" style="color:#5a5d6f;">Based in {{profile.location}}</p>
             <ul class="dev__social">
              {%if profile.social_github%}
                 <li>
@@ -35,7 +35,7 @@
             {%endif%}
             </ul>
 
-            <a href="{%url 'create-message' profile.id%}" class="btn btn--sub btn--lg">Send Message </a>
+            <a style="background-color:rgb(88,38,101)"href="{%url 'create-message' profile.id%}" class="btn btn--sub btn--lg">Send Message </a>
 
           </div>
         </div>
@@ -44,28 +44,28 @@
 -webkit-box-shadow: -1px 1px 43px 1px rgba(0,0,0,0.14);
 -moz-box-shadow: -1px 1px 43px 1px rgba(0,0,0,0.14);">
         <div class="devInfo">
-          <h3 class="devInfo__title">About Me</h3>
-          <p class="devInfo__about">
+          <h3 class="devInfo__title" style="color:#583461" >About Me</h3>
+          <p class="devInfo__about" style="color:#5a5d6f;">
             {{profile.bio}}
           </p>
         </div>
         <div class="devInfo">
-          <h3 class="devInfo__title">Skills</h3>
+          <h3 class="devInfo__title" style="color:#583461">Skills</h3>
           <div class="devInfo__skills">
 
             {%for skill in topSkills%}
             <div class="devSkill">
-              <h4 class="devSkill__title">{{skill.name}}</h4>
-              <p class="devSkill__info">
+              <h4 class="devSkill__title" style="color:#30323d">{{skill.name}}</h4>
+              <p class="devSkill__info" style="color:#5a5d6f;">
                 {{skill.description}}
               </p>
             </div>
             {%endfor%}
 
-            <h3 class="devInfo__subtitle">Other Skills</h3>
+            <h3 class="devInfo__subtitle" style="color:#583461">Other Skills</h3>
             <div class="devInfo__otherSkills">
                 {%for skill in otherSkills%}
-              <span class="tag tag--pill tag--sub tag--lg">
+              <span class="tag tag--pill  tag--lg" style="background-color:rgba(135, 56, 156,0.9)!important ; color:white">
                 <small>{{skill.name}}</small>
               </span>
               {%endfor%}
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div class="devInfo">
-          <h3 class="devInfo__title">Work</h3>
+          <h3 class="devInfo__title" style="color:#583461">Work</h3>
           <div class="grid grid--two">
 
             {% for project in profile.project_set.all%}

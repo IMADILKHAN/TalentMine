@@ -8,7 +8,7 @@
    <div class="card">
      <div class="auth__header text-center">
        <a href="/">
-         <img src="{% static 'images/logo2.jpg'%}"  alt="icon" />
+         <img src="{% static 'images/logo3.png'%}"  alt="icon" />
        </a>
        <h3>Account SignUp</h3>
        <p>Create a new developer account</p>
@@ -45,17 +45,17 @@
   <div class="card">
     <div class="auth__header text-center">
       <a href="/">
-        <img src="{% static 'images/logo2.jpg'%}" alt="icon" />
+        <img src="{% static 'images/logo3.png'%}" alt="icon" />
       </a>
-      <h3>Account Login</h3>
-      <p>Hello User, Welcome Back!</p>
+      <h3 style="color:#30323d">Account Login</h3>
+      <p style="color:#30323d">Hello User, Welcome Back!</p>
     </div>
 
     <form action="{% url 'login'%}" method="POST" class="form auth__form">
         {%csrf_token%}
       <!-- Input:Email -->
       <div class="form__field">
-        <label for="formInput#text">Username: </label>
+        <label for="formInput#text" style="color:#30323d">Username: </label>
         <input
           class="input input--text"
           id="formInput#text"
@@ -67,7 +67,7 @@
 
       <!-- Input:Password -->
       <div class="form__field">
-        <label for="formInput#password">Password: </label>
+        <label for="formInput#password" style="color:#30323d">Password: </label>
         <input
           class="input input--password"
           id="formInput#passowrd"
@@ -77,13 +77,13 @@
         />
       </div>
       <div class="auth__actions">
-        <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
-        <a href="{%url 'reset_password'%}">Forget Password?</a>
+        <input class="btn btn--sub btn--lg" style="background-color:rgba(135, 56, 156,0.9)!important"type="submit" value="Log In" />
+        <a href="{%url 'reset_password'%}" style="color:#583461">Forget Password?</a>
       </div>
     </form>
     <div class="auth__alternative">
-      <p>Don’t have an Account?</p>
-      <a href="{%url 'register'%}">Sign Up</a>
+      <p style="color:#30323d">Don’t have an Account?</p>
+      <a href="{%url 'register'%}" style="color:#583461">Sign Up</a>
     </div>
   </div>
 </div>

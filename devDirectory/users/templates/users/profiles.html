@@ -1,70 +1,162 @@
 {%extends 'main.html'%}
 
 {%block content%}
+{%load static%}
+<!-- <div class="left_block" style="min-height: 100%;width:20%!important;float:left;background-color:black!important">
+    <h3>this is left side</h3>
+</div> -->
 
-<main class="home">
-  <section class="hero-section text-center" style="background-color:#e1e1f7;height:30vh;">
-    <div class="container container--narrow">
-      <div class="hero-section__box">
-          <h3 >Find & Hire the best workers from around the globe to build your team </h3>
-          <h5 style="padding-top:10px">Hire The Best</h5>
-      </div>
 
-      <div class="hero-section__search">
-        <form id="searchForm"class="form" action="{% url 'profiles'%}" method="get">
-          <div class="form__field">
-            <label for="formInput#search">Search Developers </label>
-            <input class="input input--text" id="formInput#search" type="text" name="search_query"
-              value = "{{search_query}}" placeholder="Search by name" />
-          </div>
+<div class="row" style="display:flex;height:1200px;background-color:rgba(130,36,227,0.035)!important;">
 
-          <input class="btn btn--sub btn--lg" type="submit" value="Search" />
-        </form>
-      </div>
-    </div>
-  </section>
-  <!-- Search Result: DevList -->
-  <section class="devlist">
-    <div class="container">
-      <div class="grid grid--three">
+    <div class="col" style="flex:26%;height:100%">
 
-          {%for profile in profiles%}
-          <div class="column card">
-            <div class="dev">
-              <a href="{%url 'user-profile' profile.id%}" class="card__body">
+        <div class="top-content" style="height:30%;background-color:#383a45;background-image: linear-gradient(135deg, #4f5261 0%, #383a45 50%);">
+            <a href="/">
+                <img style="left: auto;right: auto;display:block; " src="{% static 'images/logo_glow.png'%}" alt="TalentMine" />
+            </a>
 
-                <div class="dev__profile">
-                  <img class="avatar avatar--md" src="{{profile.profile_image.url}}" alt="image" />
-                  <div class="dev__meta">
-                    <h3>{{profile.name}}</h3>
-                    <h5>{{profile.short_intro|slice:'50'}}</h5>
-                  </div>
+        </div>
+        <div class="bottom-content" style="height:70%;background-color:rgba(130,36,227,0.04)!important;-webkit-box-flex: 1;">
+
+            <div class="grid grid--two">
+                <div class="icon_container">
+                    <li class="icon_li">
+                        <a href="#" class="icon_fin" >
+                            <i class="fa-solid fa-house" ></i>
+                            <span class="below_icon">Home</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span class="below_icon">Jobs</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="below_icon">Users</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span class="below_icon">Login</span>
+                        </a>
+                    </li>
+                    <li class="icon_li">
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-message"></i>
+                            <span class="below_icon">Mails</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span class="below_icon">Home</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span class="below_icon">Home</span>
+                        </a>
+                        <a href="#" class="icon_fin">
+                            <i class="fa-solid fa-briefcase" ></i>
+                            <span class="below_icon">Home</span>
+                        </a>
+                    </li>
                 </div>
-                <p class="dev__info">
-                  {{profile.bio|slice:"180"}}
-                </p>
-                <div class="dev__skills">
-                {%for skill in profile.skill_set.all|slice:"5"%}
 
-                  <span class="tag tag--pill tag--main">
-                    <small>{{skill}}</small>
-                  </span>
 
-                  {%endfor%}
 
-                </div>
-              </a>
+
             </div>
-          </div>
 
-          {%endfor%}
+        </div>
 
-      </div>
+
     </div>
-  </section>
-  {%include 'pagination.html' with queryset=profiles custom_range=custom_range%}
 
-</main>
+    <div class="col" style="flex:74%;">
+        <main class="home" id="users-page">
+            <!-- <a href="/" class="header__logo" style="float:left">
+              <img style="margin-left:0px;" src="{% static 'images/logo3.png'%}" alt="TalentMine" />
+            </a> -->
+
+            <div class="top_users">
+
+                <!-- Search Form *IMPORTAT* -->
+                <div class="search_users">
+                    <div class="search_container">
+                        <form id="searchForm" class="formSearch" action="{% url 'profiles'%}" method="get">
+                          <div class="form__field" style="width:100%;">
+
+                            <input class="input--box" id="formInput#search" type="text" name="search_query"
+                              value = "{{search_query}}" placeholder="Enter To search" />
+                          </div>
+                        </form>
+                        <div class="" style="float:right!important;">
+                            {%if request.user.is_authenticated%}
+                            <a href="{%url 'logout'%}"  class="nav_links" >
+                                <i class="fa-solid fa-arrow-right-from-bracket" style="font-size:2.2rem;color:#8224e3!important;margin-right:35px;"></i>
+                            </a>
+                            <a href="{%url 'account'%}"  class="nav_links" >
+                                <i class="fa-regular fa-user" style="font-size:2.2rem;color:#8224e3;margin-right:35px;"></i>
+                            </a>
+                            <a href="{%url 'inbox'%}"  class="nav_links" >
+                                <i class="fa-regular fa-message" style="font-size:2.2rem;color:#8224e3;margin-right:35px;"></i>
+                            </a>
+
+                            {%else%}
+                                <a href="{%url 'login'%}"  class="nav_links" >
+                                    <i class="fa-solid fa-right-to-bracket" style="font-size:2.2rem;color:#8224e3;padding-right:50px!important;"></i>
+                                </a>
+
+                            {%endif%}
+                        </div>
+
+                    </div>
+                </div>
+
+                <section class="devlist" >
+                      <div class="container" style="padding:0!important;margin:0!important">
+                        <div class="grid grid--two" style="padding-left:10%;">
+
+                            {%for profile in profiles%}
+                          <!-- user profile card -->
+                            <div class="column card">
+                                  <div class="dev">
+                                    <a href="{%url 'user-profile' profile.id%}" class="card__body" style="text-decoration:none!important">
+
+                                      <div class="dev__profile">
+                                        <img class="avatar avatar--md" src="{{profile.profile_image.url}}" alt="image" />
+                                        <div class="dev__meta">
+                                          <h3>{{profile.name}}</h3>
+                                          <h5>{{profile.short_intro|slice:'50'}}</h5>
+                                        </div>
+                                      </div>
+                                      <p class="dev__info">
+                                        {{profile.bio|slice:"100"}}
+                                      </p>
+                                      <div class="dev__skills">
+                                      {%for skill in profile.skill_set.all|slice:"5"%}
+
+                                        <span class="tag tag--pill tag--main" style="border:0.4px solid #8224e3;background:none">
+                                          <small style="background:none">{{skill}}</small>
+                                        </span>
+
+                                        {%endfor%}
+
+                                      </div>
+                                    </a>
+                                  </div>
+                            </div>
+
+                            {%endfor%}
+
+                        </div>
+                        {%include 'pagination.html' with queryset=profiles custom_range=custom_range%}
+                      </div>
+
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+</div>
 
 
 {%endblock content%}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>TalentMine</title>
+    </head>
+    <body>
+        {% extends 'main.html'%}
+        {% block content %}
+        {%load static%}
+        <div id='landing-container'>
+
+            <div id='landing-text'>
+
+            <h1 id="heading-landing">Find talent for your startup or freelance project</h1>
+            <p  id="para-landing">Our mission at TalentMine is to make hiring easy. Whether it's for your startup or your next freelance project.</p>
+            </div>
+
+            <div id="landing-cols">
+
+            <!-- recruit -->
+            <div id='recruit-talent'>
+                    <div class="styles_businessUnit__3KlX6">
+            <div class="styles_unitTitle__3eW7l">
+              <img id="talent-landing" src="{% static 'images/hireTalent.png'%}" alt="">
+                <h2 class="styles_headingMedium__2nH3y styles_unitHeading__3Pd2e">Hire Talent</h2>
+              </div>
+              <p class="landing-para">Find the most talented people to build your team.</p>
+                <a class="anchor-landing"href="/users/">Hire Talent</a>
+            </div>
+                </div>
+
+            <!-- explore -->
+            <div id='recruit-talent'>
+                    <div class="styles_businessUnit__3KlX6">
+            <div class="styles_unitTitle__3eW7l">
+              <img id="talent-landing" src="{% static 'images/explore.png'%}" alt="">
+                <h2 class="styles_headingMedium__2nH3y styles_unitHeading__3Pd2e">Get Hired</h2>
+              </div>
+              <p class="landing-para">Showcase your talent to a pottential employer.</p>
+                <a class="anchor-landing"href="/project/" >Get Hired</a>
+            </div>
+                </div>
+            </div>
+
+        </div>
+
+        {%endblock content%}
+    </body>
+</html>

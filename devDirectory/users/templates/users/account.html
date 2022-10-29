@@ -8,32 +8,32 @@
         <div class="column column--1of3">
           <div class="card text-center">
             <div class="card__body dev">
-              <a class="tag tag--pill tag--main settings__btn" href="{%url 'edit-account'%}"><i class="im im-edit"></i> Edit</a>
+              <a class="tag tag--pill tag--main settings__btn" style="background-color:rgba(135, 56, 156,0.9)!important;color:white;" href="{%url 'edit-account'%}"><i class="im im-edit"></i> Edit</a>
               <img  style="border-radius:0%" class="avatar avatar--xl dev__avatar" src="{{profile.profile_image.url}}"/>
 
-              <h2 class="dev__name">{{profile.name}}</h2>
-              <p class="dev__title">{{profile.short_intro}}</p>
-              <p class="dev__location">Based in {{profile.location}}</p>
+              <h2 class="dev__name" style="color:#583461">{{profile.name}}</h2>
+              <p class="dev__title" style="color:#5a5d6f;">{{profile.short_intro}}</p>
+              <p class="dev__location" style="color:#5a5d6f;">Based in {{profile.location}}</p>
 
               <ul class="dev__social">
                {%if profile.social_github%}
                   <li>
-                      <a title="Github" href="{{profile.social_github}}" target="_blank"><i class="im im-github"></i></a>
+                      <a style="color:rgba(135, 56, 156,0.9)!important;" title="Github" href="{{profile.social_github}}" target="_blank"><i class="im im-github"></i></a>
                   </li>
               {%endif%}
               {%if profile.social_twitter%}
                 <li>
-                  <a title="Twitter" href="{{profile.social_twitter}}" target="_blank"><i class="im im-twitter"></i></a>
+                  <a style="color:rgba(135, 56, 156,0.9)!important;" title="Twitter" href="{{profile.social_twitter}}" target="_blank"><i class="im im-twitter"></i></a>
                 </li>
               {%endif%}
               {%if profile.social_linkedin%}
                 <li>
-                  <a title="LinkedIn" href="{{profile.social_linkedin}}" target="_blank"><i class="im im-linkedin"></i></a>
+                  <a style="color:rgba(135, 56, 156,0.9)!important;" title="LinkedIn" href="{{profile.social_linkedin}}" target="_blank"><i class="im im-linkedin"></i></a>
                 </li>
                {%endif%}
                {%if profile.social_website%}
                   <li>
-                      <a title="Personal Website" href="{{profile.social_website}}" target="_blank"><i class="im im-globe"></i></a>
+                      <a style="color:rgba(135, 56, 156,0.9)!important;" title="Personal Website" href="{{profile.social_website}}" target="_blank"><i class="im im-globe"></i></a>
                   </li>
               {%endif%}
               </ul>
@@ -44,28 +44,28 @@
         </div>
         <div class="column column--2of3">
           <div class="devInfo">
-            <h3 class="devInfo__title">About Me</h3>
-            <p class="devInfo__about">
+            <h3 class="devInfo__title" style="color:#583461" >About Me</h3>
+            <p class="devInfo__about" style="color:#5a5d6f;">
                 {{profile.bio}}
             </p>
           </div>
           <div class="settings">
-            <h3 class="settings__title">Skills</h3>
-            <a class="tag tag--pill tag--sub settings__btn tag--lg" href="{% url 'create-skill' %}"><i class="im im-plus"></i> Add Skill</a>
+            <h3 class="settings__title" style="color:#583461">Skills</h3>
+            <a class="tag tag--pill tag--sub settings__btn tag--lg" style="background-color:rgba(135, 56, 156,0.9)!important;color:white;" href="{% url 'create-skill' %}"><i class="im im-plus"></i> Add Skill</a>
           </div>
 
           <table class="settings__table">
              {% for skill in topSkills%}
             <tr>
-              <td class="settings__tableInfo">
+              <td class="settings__tableInfo" style="color:#5a5d6f;">
                 <h4>{{skill.name}}</h4>
                 <p>
                     {{skill.description|slice:"150"}}
                 </p>
               </td>
               <td class="settings__tableActions">
-                <a class="tag tag--pill tag--main settings__btn" href="{%url 'update-skill' skill.id%}"><i class="im im-edit"></i> Edit</a>
-                <a class="tag tag--pill tag--main settings__btn" href="{% url 'delete-skill' skill.id%}"><i class="im im-x-mark-circle-o"></i>
+                <a class="tag tag--pill tag--main settings__btn" style="background-color:rgba(135, 56, 156,0.9)!important;color:white;" href="{%url 'update-skill' skill.id%}"><i class="im im-edit"></i> Edit</a>
+                <a class="tag tag--pill tag--main settings__btn" style="background-color:rgba(135, 56, 156,0.9)!important;color:white;" href="{% url 'delete-skill' skill.id%}"><i class="im im-x-mark-circle-o"></i>
                   Delete</a>
               </td>
             </tr>
@@ -75,8 +75,8 @@
           </table>
 
           <div class="settings">
-            <h3 class="settings__title">Projects</h3>
-            <a class="tag tag--pill tag--sub settings__btn tag--lg" href="{%url 'create-project'%}"><i class="im im-plus"></i> Add Project</a>
+            <h3 class="settings__title" style="color:#583461" > Projects</h3>
+            <a class="tag tag--pill tag--sub settings__btn tag--lg" style="background-color:rgba(135, 56, 156,0.9)!important;color:white;" href="{%url 'create-project'%}"><i class="im im-plus"></i> Add Project</a>
           </div>
 
           <table class="settings__table">
@@ -92,8 +92,8 @@
                 </p>
               </td>
               <td class="settings__tableActions">
-                <a class="tag tag--pill tag--main settings__btn" href="{%url 'update-project' project.id%}"><i class="im im-edit"></i> Edit</a>
-                <a class="tag tag--pill tag--main settings__btn" href="{%url 'delete-project' project.id%}"><i class="im im-x-mark-circle-o"></i>
+                <a class="tag tag--pill tag--main settings__btn" style="background-color:rgba(135, 56, 156,0.9)!important;color:white;" href="{%url 'update-project' project.id%}"><i class="im im-edit"></i> Edit</a>
+                <a class="tag tag--pill tag--main settings__btn" style="background-color:rgba(135, 56, 156,0.9)!important;color:white;" href="{%url 'delete-project' project.id%}"><i class="im im-x-mark-circle-o"></i>
                   Delete</a>
               </td>
             </tr>

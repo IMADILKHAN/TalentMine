@@ -1,7 +1,6 @@
 .tag {
   display: inline-flex;
   align-items: center;
-  background-color: var(--color-sub);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -39,15 +38,11 @@
 
 .tag--main,
 .tag--main > small {
-  background: var(--color-main-light);
-  color: var(--color-main);
   font-weight: 500;
 }
 
 .tag--sub,
 .tag--sub > small {
-  background: var(--color-sub-lighter);
-  color: var(--color-sub-light);
   font-weight: 500;
 }
 

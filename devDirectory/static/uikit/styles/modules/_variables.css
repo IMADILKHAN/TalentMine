@@ -22,4 +22,15 @@
   --font-bold: 700;
   --generic-shadow: 1px 1px 5px #00000010;
   --generic-transition: all 0.3s ease-in-out;
+  --border-radius:2rem;
+  --card-border-radius:1rem;
+  --btn-padding:0.6rem 2rem;
+  --search-padding: 0.6rem 1rem;
+  --card-padding: 1rem;
+
+
+
+
+
+
 }

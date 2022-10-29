@@ -7,7 +7,7 @@
 }
 
 .card {
-  border: 2px solid var(--color-light);
+  border: 1px solid var(--color-light);
 }
 
 img {
@@ -262,7 +262,7 @@ img {
 ========================*/
 
 .devlist {
-  margin-top: 8rem;
+  margin-top: 14rem;
 }
 
 .devlist .grid {
@@ -298,7 +298,7 @@ img {
   Pagination
 ========================*/
 .pagination {
-  margin-top: 8rem;
+  margin-top: 3rem;
   margin-bottom: 10rem;
 }
 
@@ -324,7 +324,7 @@ img {
 ========================*/
 
 .profile .card > .dev {
-  padding: 4rem;
+  padding: 2rem;
 }
 
 .dev__avatar {

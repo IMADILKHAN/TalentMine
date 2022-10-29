@@ -5,6 +5,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
@@ -16,13 +17,103 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'uikit/styles/uikit.css' %}" />
         <!-- Dev Search UI -->
-        <link rel="stylesheet" href="{% static 'styles/app.css' %}" />
         <link rel="stylesheet" href="{% static 'styles/main.css' %}"/>
+        <link rel="stylesheet" href="{% static 'styles/app.css' %}" />
+        <script src="https://kit.fontawesome.com/7a13f3dd91.js" crossorigin="anonymous"></script>
         <title>TalentMine</title>
+
+        <style media="screen">
+            /* body{
+                background-color: rgb(250,249,253)!important;
+                font-family: "Nunito Sans", Arial, sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 26px;
+            } */
+            body{
+                height: 100%;
+                background-color:rgba(130,36,227,0.020)!important;
+                /* background-color: rgb(250,249,253)!important; */
+            }
+            html{
+                height: 100%;
+                /* overflow-y: hidden; */
+                overflow-x: hidden;
+
+
+            }
+            #project_card:hover{
+                opacity: 0.2!important;
+            }
+
+            #card_container {
+              position: relative;
+              text-align: center;
+              color: white;
+            }
+
+            #card_container:hover{
+                color:#383a45!important;
+            }
+            .bottom-left:hover{
+                color:#383a45!important;
+            }
+            .top-left:hover{
+                color:#383a45!important;
+            }
+
+            .top-right:hover{
+                color:#383a45!important;
+            }
+            .top-left:hover{
+                color:#383a45!important;
+            }
+            .centeredt:hover{
+                color:#383a45!important;
+            }
+            /* Bottom left text */
+            .bottom-left {
+              position: absolute;
+              bottom: 8px;
+              left: 16px;
+            }
+
+            /* Top left text */
+            .top-left {
+              position: absolute;
+              top: 8px;
+              left: 16px;
+            }
+
+            /* Top right text */
+            .top-right {
+              position: absolute;
+              top: 8px;
+              right: 16px;
+            }
+
+            /* Bottom right text */
+            .bottom-right {
+              position: absolute;
+              bottom: 8px;
+              right: 16px;
+            }
+
+            /* Centered text */
+            .centered {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+
+
+        </style>
 
     </head>
     <body>
-        {%include 'navbar.html'%}
+        <!-- {%include 'navbar.html'%} -->
 
 
         {%if messages%}
@@ -40,6 +131,6 @@
         <!-- <footer>This is footer</footer> -->
     </body>
     <script src="{% static 'uikit/app.js'%}">
-
+    <script src="https://kit.fontawesome.com/7a13f3dd91.js" crossorigin="anonymous"></script>
     </script>
 </html>

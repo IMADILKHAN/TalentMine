@@ -81,9 +81,31 @@ class Post(models.Model):
     def __str__(self):
         return self.user
 
+
 class LikePost(models.Model):
     post_id = models.CharField(max_length = 500)
     username = models.CharField(max_length=100)
 
     def __str__(self):
         return self.username
+
+
+# Job Postings
+
+class Jobs(models.Model):
+    id          = models.UUIDField(default = uuid.uuid4, unique=True,primary_key=True,editable=False)
+    title       = models.CharField(null=False,max_length = 500)
+    location    = models.CharField(null=True,max_length = 500)
+    featured_image = models.ImageField(null=True,blank=True,default="default-job.jpg")
+    description = models.CharField(null=False,max_length = 5000)
+    requirements = models.CharField(null=False,max_length = 5000)
+    job_type = models.CharField(null=False,max_length = 100)
+    company_name = models.CharField(null=False,max_length = 100)
+    tags = models.ManyToManyField('Tag',blank=True)
+    is_remote   = models.BooleanField()
+    is_featured = models.BooleanField()
+    apply_link = models.URLField(max_length = 20000)
+    demo_video = models.URLField(max_length = 20000)
+
+    def __str__(self):
+        return self.title
