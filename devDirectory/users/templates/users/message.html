@@ -6,7 +6,12 @@
       <div class="message">
         <a class="backButton" style="background-color:rgba(135, 56, 156,0.9)!important;color:white;"  href="{%url 'inbox' %}"><i class="im im-angle-left"></i></a>
         <h2 class="message__subject" style="color:rgba(135, 56, 156,0.9)!important;">{{message.subject}}</h4>
-          <a href="profile.html" class="message__author"style="color:#5a5d6f;" >{{message.name}}</a>
+
+            {% if message.sender%}
+                <a href="{%url 'user-profile' message.sender.id%}" class="message__author"style="color:#5a5d6f;" >{{message.name}}</a>
+            {%else%}
+                <p class="message__author"style="color:#5a5d6f;">{{message.name}}</p>
+            {%endif%}
           <p class="message__date" style="color:#5a5d6f;">{{message.created}}</p>
           <div class="message__body" style="color:#5a5d6f;">
               {{message.body|linebreaksbr}}

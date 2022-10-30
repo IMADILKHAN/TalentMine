@@ -9,7 +9,7 @@
 
 <div class="row" style="display:flex;height:1200px;background-color:rgba(130,36,227,0.035)!important;">
 
-    <div class="col" style="flex:26%;height:100%">
+    <div class="col" style="flex:26%;height:100%" id="left-col">
 
         <div class="top-content" style="height:30%;background-color:#383a45;background-image: linear-gradient(135deg, #4f5261 0%, #383a45 50%);">
             <a href="/">
@@ -22,54 +22,54 @@
             <div class="grid grid--two">
                 <div class="icon_container">
                     <li class="icon_li">
-                        <a href="#" class="icon_fin" >
+                        <a href="/" class="icon_fin" >
                             <i class="fa-solid fa-house" ></i>
                             <span class="below_icon">Home</span>
                         </a>
-                        <a href="#" class="icon_fin">
+                        <a href="/project" class="icon_fin">
                             <i class="fa-solid fa-briefcase"></i>
+                            <span class="below_icon">Explore</span>
+                        </a>
+                        <a href="/jobs" class="icon_fin">
+                            <i class="fa-solid fa-clipboard"></i>
                             <span class="below_icon">Jobs</span>
                         </a>
-                        <a href="#" class="icon_fin">
+                        <a href="/users" class="icon_fin">
                             <i class="fa-solid fa-user"></i>
                             <span class="below_icon">Users</span>
                         </a>
-                        <a href="#" class="icon_fin">
-                            <i class="fa-solid fa-right-to-bracket"></i>
-                            <span class="below_icon">Login</span>
-                        </a>
                     </li>
                     <li class="icon_li">
-                        <a href="#" class="icon_fin">
+                        <a href="/users/inbox" class="icon_fin">
                             <i class="fa-solid fa-message"></i>
                             <span class="below_icon">Mails</span>
                         </a>
-                        <a href="#" class="icon_fin">
-                            <i class="fa-solid fa-briefcase"></i>
-                            <span class="below_icon">Home</span>
+                        <a href="/users/account/" class="icon_fin">
+                            <i class="fa-solid fa-user-pen"></i>
+                            <span class="below_icon">Account</span>
                         </a>
-                        <a href="#" class="icon_fin">
-                            <i class="fa-solid fa-briefcase"></i>
-                            <span class="below_icon">Home</span>
+                        <a href="/users/login" class="icon_fin">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span class="below_icon">Login</span>
                         </a>
-                        <a href="#" class="icon_fin">
-                            <i class="fa-solid fa-briefcase" ></i>
-                            <span class="below_icon">Home</span>
+                        <a href="/resume" class="icon_fin">
+                            <i class="fa-solid fa-file"></i>
+                            <span class="below_icon">Resume</span>
                         </a>
+
                     </li>
                 </div>
-
-
-
-
             </div>
+
+
+
 
         </div>
 
 
     </div>
 
-    <div class="col" style="flex:74%;">
+    <div class="col" style="flex:74%;" id="right-col">
         <main class="home" id="users-page">
             <!-- <a href="/" class="header__logo" style="float:left">
               <img style="margin-left:0px;" src="{% static 'images/logo3.png'%}" alt="TalentMine" />
@@ -121,20 +121,20 @@
                                     <a href="{%url 'user-profile' profile.id%}" class="card__body" style="text-decoration:none!important">
 
                                       <div class="dev__profile">
-                                        <img class="avatar avatar--md" src="{{profile.profile_image.url}}" alt="image" />
+                                        <img class="avatar avatar--md" src="{{profile.imageUrl}}" alt="image" />
                                         <div class="dev__meta">
-                                          <h3>{{profile.name}}</h3>
-                                          <h5>{{profile.short_intro|slice:'50'}}</h5>
+                                          <h3 style="color:#583461" >{{profile.name}}</h3>
+                                          <h5  style="color:#30323d" >{{profile.short_intro|slice:'50'}}</h5>
                                         </div>
                                       </div>
-                                      <p class="dev__info">
+                                      <p class="dev__info" style="color:#5a5d6f">
                                         {{profile.bio|slice:"100"}}
                                       </p>
                                       <div class="dev__skills">
                                       {%for skill in profile.skill_set.all|slice:"5"%}
 
-                                        <span class="tag tag--pill tag--main" style="border:0.4px solid #8224e3;background:none">
-                                          <small style="background:none">{{skill}}</small>
+                                        <span class="tag tag--pill tag--main" style="border:0.4px solid #8224e3;background:none;">
+                                          <small style="background:none;color:#30323d">{{skill}}</small>
                                         </span>
 
                                         {%endfor%}

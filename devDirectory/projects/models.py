@@ -7,7 +7,9 @@ from datetime import datetime
 
 
 class Project(models.Model):
-    owner = models.ForeignKey(Profile,null=True,blank=True,on_delete=models.SET_NULL)
+    owner = models.ForeignKey(
+        Profile,null=True,blank=True,on_delete=models.CASCADE
+    )
     id = models.UUIDField(default = uuid.uuid4, unique=True,primary_key=True,editable=False)
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
@@ -21,6 +23,15 @@ class Project(models.Model):
 
     class Meta:
         ordering=['-created','-vote_ratio','-vote_total','title']
+
+
+    @property
+    def imageUrl(self):
+        try:
+            url = self.featured_image.url
+        except:
+            url = ''
+        return url
 
     @property
     def reviewers(self):

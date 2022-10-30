@@ -9,7 +9,7 @@
           <div class="card text-center">
             <div class="card__body dev">
               <a class="tag tag--pill tag--main settings__btn" style="background-color:rgba(135, 56, 156,0.9)!important;color:white;" href="{%url 'edit-account'%}"><i class="im im-edit"></i> Edit</a>
-              <img  style="border-radius:0%" class="avatar avatar--xl dev__avatar" src="{{profile.profile_image.url}}"/>
+              <img  style="border-radius:0%" class="avatar avatar--xl dev__avatar" src="{{profile.imageUrl}}"/>
 
               <h2 class="dev__name" style="color:#583461">{{profile.name}}</h2>
               <p class="dev__title" style="color:#5a5d6f;">{{profile.short_intro}}</p>
@@ -83,7 +83,7 @@
               {%for project in projects%}
             <tr>
               <td class="settings__thumbnail">
-                <a href="{% url 'project' project.id%}"><img src="{{project.featured_image.url}}" alt="Project Thumbnail" /></a>
+                <a href="{% url 'project' project.id%}"><img src="{{ project.imageUrl }}" alt="Project Thumbnail" /></a>
               </td>
               <td class="settings__tableInfo">
                 <a href="{% url 'project' project.id%}">{{project.title}}</a>

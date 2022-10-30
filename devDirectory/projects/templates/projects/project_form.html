@@ -5,28 +5,23 @@
 <!-- <h1>Project Form</h1> -->
 <main class="formPage my-xl">
     <div class="content-box">
-
         <div class="formWrapper">
-            <a class="backButton" href="#"><i class="im im-x-mark-circle"></i></a>
-            <h5 style="text-align:center">Add Work Details</h5>
+            <a class="backButton" href="{% url 'account'%}"><i class="im im-x-mark-circle"></i></a>
+            <h3 style="text-align:center;color:#583461">Add Work Details</h3>
             <form class="form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-
                 <!-- Input:Text -->
-
                 {%for field in form%}
                 <div class="form__field">
-                    <label for="formInput#text">{{field.label}}: </label>
+                    <label for="formInput#text" style="color:#30323d" >{{field.label}}: </label>
                         {{field}}
                     </div>
                 {%endfor%}
-
                 <div class="form__field">
                     <label for="formInput#text">Tags: </label>
                         <textarea class="input" name="newtags" placeholder="Add tags.."></textarea>
                     </div>
-
-                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+                <input style="background-color:rgb(88,38,101);color:white;" class="btn btn--lg  my-md" type="submit" value="Submit" />
             </form>
         </div>
     </div>

@@ -5,18 +5,18 @@
     <main class="formPage my-xl">
      <div class="content-box">
          <div class="formWrapper">
-             <a class="backButton" href="{% url 'account'%}"><i class="im im-angle-left"></i></a>
-             <h3>Add Skill</h3>
+             <a style="background-color:rgba(135, 56, 156,0.9)!important;color:white;" class="backButton" href="{% url 'account'%}"><i class="im im-angle-left"></i></a>
+             <h3 style="color:#583461;">Add Skill</h3>
 
              <form class="form" method="POST">
                  {%csrf_token%}
                  {% for field in form%}
                  <div class="form__field">
-                     <label for="formInput#text">{{field.label}}: </label>
+                     <label for="formInput#text" style="color:#5a5d6f;">{{field.label}}: </label>
                      {{field}}
                  </div>
                  {%endfor%}
-                 <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+                 <input  style="background-color:rgb(88,38,101);color:white;"class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
 
              </form>
          </div>

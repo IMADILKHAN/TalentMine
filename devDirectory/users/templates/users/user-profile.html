@@ -8,7 +8,7 @@
       <div class="column column--1of3">
         <div class="card text-center">
           <div class="card__body dev">
-            <img class="avatar avatar--xl" src="{{profile.profile_image.url}}" style="border-radius:0px"/>
+            <img class="avatar avatar--xl" src="{{profile.imageUrl}}" style="border-radius:0px"/>
             <h2 class="dev__name" style="color:#583461">{{profile.name}}</h2>
             <p class="dev__title" style="color:#5a5d6f;">{{profile.short_intro}}</p>
             <p class="dev__location" style="color:#5a5d6f;">Based in {{profile.location}}</p>
@@ -81,7 +81,7 @@
             <div class="column">
               <div class="card project">
                 <a href="{%url 'project' project.id%}" class="project">
-                  <img class="project__thumbnail" src="{{project.featured_image.url}}" alt="project thumbnail" />
+                  <img class="project__thumbnail" src="{{ project.imageUrl }}" alt="project thumbnail" />
                   <div class="card__body">
                     <h3 class="project__title">{{project.title}}</h3>
                     <p><a class="project__author" href="">By {{project.owner.name}}</a></p>
