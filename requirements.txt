@@ -1,10 +1,101 @@
-asgiref==3.4.1
-dj-database-url==0.5.0
-Django==3.2.8
-djangorestframework==3.12.4
+alembic==1.5.4
+aniso8601==8.1.1
+asgiref==3.5.2
+attrs==22.1.0
+Automat==20.2.0
+Babel==2.9.0
+backports.entry-points-selectable==1.1.0
+backports.zoneinfo==0.2.1
+beautifulsoup4==4.11.1
+boto3==1.25.4
+botocore==1.28.4
+brotlipy==0.7.0
+bs4==0.0.1
+certifi==2020.6.20
+cffi @ file:///opt/concourse/worker/volumes/live/8fbed55e-0573-4246-7cf9-162067141d5e/volume/cffi_1605538070636/work
+chardet @ file:///opt/concourse/worker/volumes/live/a5a7c56b-23cb-471d-7404-f4130b8aed33/volume/chardet_1605303184529/work
+click==7.1.2
+colorama==0.4.4
+commonmark==0.9.1
+conda==4.9.2
+conda-package-handling @ file:///opt/concourse/worker/volumes/live/a7e34989-4c54-4cb6-4156-4e58ee270730/volume/conda-package-handling_1603018121300/work
+configparser==5.0.2
+constantly==15.1.0
+crayons==0.4.0
+cryptography @ file:///opt/concourse/worker/volumes/live/62f9527a-361c-47e5-5709-227a4a523add/volume/cryptography_1605544472602/work
+cssselect==1.1.0
+distlib==0.3.3
+Django==4.1.1
+django-storages==1.13.1
+djangorestframework==3.14.0
+docopt==0.6.2
+-e git+https://github.com/IndianOpenSourceFoundation/dynamic-cli.git@06d0b5d2328e69a195fdb71d8a9728fb1a23f440#egg=dynamic_cli
+filelock==3.3.0
+Flask==1.0.3
+Flask-Cors==3.0.10
+Flask-Migrate==2.6.0
+Flask-Moment==0.11.0
+Flask-RESTful==0.3.7
+Flask-SQLAlchemy==2.4.0
+Flask-WTF==0.14.3
 gunicorn==20.1.0
-Pillow==8.4.0
-psycopg2-binary==2.9.2
-pytz==2021.3
+html5lib==1.1
+hyperlink==21.0.0
+idna @ file:///tmp/build/80754af9/idna_1593446292537/work
+incremental==21.3.0
+itemadapter==0.7.0
+itemloaders==1.0.6
+itsdangerous==1.1.0
+Jinja2==2.11.3
+jmespath==1.0.1
+lxml==4.9.1
+Mako==1.1.4
+MarkupSafe==1.1.1
+oauthlib==3.1.0
+parsel==1.6.0
+Pillow==9.0.1
+pipreqs==0.4.11
+platformdirs==2.4.0
+Protego==0.2.1
+psycopg2-binary==2.8.6
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycosat==0.6.3
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+PyDispatcher==2.0.6
+Pygments==2.11.2
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1605545627475/work
+PySocks @ file:///opt/concourse/worker/volumes/live/85a5b906-0e08-41d9-6f59-084cee4e9492/volume/pysocks_1594394636991/work
+python-dateutil==2.6.0
+python-editor==1.0.4
+pytz==2021.1
+queuelib==1.6.2
+requests @ file:///tmp/build/80754af9/requests_1592841827918/work
+requests-file==1.5.1
+requests-oauthlib==1.3.0
+rich==9.9.0
+ruamel-yaml==0.15.87
+s3transfer==0.6.0
+Scrapy==2.6.2
+selenium==3.141.0
+service-identity==21.1.0
+simple-term-menu==1.0.1
+six @ file:///opt/concourse/worker/volumes/live/5b31cb27-1e37-4ca5-6e9f-86246eb206d2/volume/six_1605205320872/work
+soupsieve==2.3.2.post1
+SQLAlchemy==1.3.23
 sqlparse==0.4.2
-whitenoise==5.3.0
+termcolor==1.1.0
+tldextract==3.3.1
+tqdm @ file:///tmp/build/80754af9/tqdm_1605303662894/work
+Twisted==22.8.0
+typing-extensions==3.10.0.2
+urllib3==1.25.10
+virtualenv==20.8.1
+w3lib==2.0.1
+webdriver-manager==3.3.0
+webencodings==0.5.1
+Werkzeug==1.0.1
+whitenoise==6.2.0
+WTForms==2.3.3
+yarg==0.1.9
+zope.interface==5.4.0
