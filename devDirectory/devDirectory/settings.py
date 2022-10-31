@@ -25,7 +25,7 @@ SECRET_KEY = '0t9x-yjxz^(_^4=o22gl6&!-g7j$s^@renmawcbo8+yp7din(p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1']
+ALLOWED_HOSTS = ['localhost','127.0.0.1',"talentmine.herokuapp.com/"]
 
 
 # Application definition
@@ -162,3 +162,7 @@ AWS_ACCESS_KEY_ID = "AKIATXFJG7MLZHSEV52S"
 AWS_SECRET_ACCESS_KEY = "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"
 
 AWS_STORAGE_BUCKET_NAME = "talentmine-bucket"
+
+
+if os.getcwd() == '/app':
+    DEBUG = False
