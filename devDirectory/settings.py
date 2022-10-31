@@ -25,7 +25,7 @@ SECRET_KEY = '0t9x-yjxz^(_^4=o22gl6&!-g7j$s^@renmawcbo8+yp7din(p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1',"talentmine.herokuapp.com/"]
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
