@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'projects.apps.ProjectsConfig',
     'users.apps.UsersConfig',
-    'rest_framework'
+    'rest_framework' ,
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -92,11 +93,11 @@ WSGI_APPLICATION = 'devDirectory.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql' ,
-        'NAME': 'TalentMine' ,
+        'NAME': 'postgres' ,
         'USER':'postgres',
         'PASSWORD':'YOYOadil14*',
-        'HOST':'localhost',
-        'PORT':'5400'
+        'HOST':'talentmine.c9xkqvyyqbuz.ap-south-1.rds.amazonaws.com',
+        'PORT':'5432'
     }
 }
 
@@ -152,3 +153,12 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_FILE_OVERWRITE = False
+AWS_ACCESS_KEY_ID = "AKIATXFJG7MLZHSEV52S"
+AWS_SECRET_ACCESS_KEY = "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"
+
+AWS_STORAGE_BUCKET_NAME = "talentmine-bucket"
