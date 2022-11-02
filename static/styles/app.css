@@ -83,6 +83,9 @@ img {
   .toggle-menu {
     position: relative;
   }
+  .below_icon{
+      display: none!important;
+  }
 
   .toggle-menu > span {
     display: block;

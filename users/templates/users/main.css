@@ -108,6 +108,13 @@
     position:relative;
     text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+    .below_icon{
+        display: none;
+    }
+}
+
 .below_icon{
     display:block;
     position:absolute;
