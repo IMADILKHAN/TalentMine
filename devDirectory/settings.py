@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'projects.apps.ProjectsConfig',
     'users.apps.UsersConfig',
     'rest_framework' ,
+    'whitenoise.runserver_nostatic',    
     'storages'
 ]
 
