@@ -117,6 +117,8 @@ class Jobs(models.Model):
     is_featured = models.BooleanField()
     apply_link = models.URLField(max_length = 20000)
     demo_video = models.URLField(max_length = 20000)
-
+    created = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.title
+    class Meta:
+        ordering=['-created']
