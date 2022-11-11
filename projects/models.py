@@ -78,29 +78,6 @@ class Tag(models.Model):
 
 
 
-# adding posts for feed
-
-class Post(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    user = models.CharField(max_length = 100)
-    image = models.ImageField(null=True,blank=True,default="default.jpg")
-    caption = models.TextField()
-    created_at = models.DateTimeField(default=datetime.now)
-    no_of_like = models.IntegerField(null=True,default=0)
-    liked_by = []
-
-    def __str__(self):
-        return self.user
-
-
-class LikePost(models.Model):
-    post_id = models.CharField(max_length = 500)
-    username = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.username
-
-
 # Job Postings
 
 class Jobs(models.Model):

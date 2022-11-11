@@ -2,9 +2,9 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Project,Tag,LikePost,Post,Jobs
-from .forms import ProjectForm,ReviewForm,PostForm
-from .utils import searchProject,paginateProjects,getPosts,getJobs,paginateJobs
+from .models import Project,Tag,Jobs
+from .forms import ProjectForm,ReviewForm
+from .utils import searchProject,paginateProjects,getJobs,paginateJobs
 
 
 
@@ -16,17 +16,7 @@ def landing(request):
     context = {}
     return render(request,'projects/landing.html',context)
 
-def feed(request):
-    posts = getPosts(request)
-    liked_posts = []
-    if request.user.is_authenticated:
-        user = request.user.profile
 
-    else:
-        user = None
-    context = {'posts':posts,'user':user}
-
-    return render(request,'projects/feed.html',context)
 
 def jobPostings(request):
     search_query,jobs = getJobs(request)
@@ -65,43 +55,7 @@ def project(request,pk):
     }
     return render(request,'projects/single-project.html',context)
 
-@login_required(login_url = 'login')
-def uploadPost(request):
-    profile = request.user.profile
-    form = PostForm()
-    if request.method == 'POST':
-        form = PostForm(request.POST,request.FILES)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.user = profile
-            post.save()
-            return redirect('/feed')
-    context = {'form':form}
-    print(profile.id)
-    return render(request,"projects/post_form.html",context)
 
-
-@login_required(login_url = 'login')
-def like_post(request):
-    username = request.user.username
-    post_id = request.GET.get('post_id')
-    post = Post.objects.get(id=post_id)
-
-    like_filter = LikePost.objects.filter(post_id=post_id,username=username).first()
-
-    if like_filter==None:
-        new_like = LikePost.objects.create(post_id=post_id,username=username)
-        new_like.save()
-        post.no_of_like = post.no_of_like + 1
-        post.liked_by.append(username)
-        post.save()
-        return redirect('/feed')
-    like_filter.delete()
-    if username in post.liked_by:
-        post.liked_by.remove(username)
-    post.no_of_like = post.no_of_like - 1
-    post.save()
-    return redirect("/feed")
 
 
 @login_required(login_url="login")
