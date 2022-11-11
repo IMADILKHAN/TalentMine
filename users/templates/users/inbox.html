@@ -5,6 +5,7 @@
   <!-- Main Section -->
   <main class="inbox my-xl">
     <div class="content-box">
+        <a class="backButton" style="margin:3rem;;background-color:#583461!important;color:white;"  href="{%url 'profiles' %}"><i class="fa-solid fa-angle-left"></i></a>
       <h3 class="inbox__title" style="color:#583461">New Messages(<span>{{unreadCount}}</span>)</h3>
       <ul class="messages">
          {%for message in messageRequests%}
