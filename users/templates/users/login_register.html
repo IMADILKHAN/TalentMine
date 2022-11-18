@@ -10,8 +10,8 @@
        <a href="/">
          <img src="{% static 'images/logo3.png'%}"  alt="icon" />
        </a>
-       <h3>Account SignUp</h3>
-       <p>Create a new developer account</p>
+       <h3 style="color:#583461!important">Account SignUp</h3>
+       <p style="color:#583461!important" >Create a new developer account</p>
      </div>
      <form method="POST" action="{%url 'register'%}" class="form auth__form" >
          {%csrf_token%}
@@ -29,12 +29,12 @@
         {%endfor%}
        <!-- Input:Text -->
        <div class="auth__actions">
-         <input class="btn btn--sub btn--lg" type="submit" value="Sign  In" />
+         <input class="btn btn--sub btn--lg" style="background-color:rgba(135, 56, 156,0.9)!important;" type="submit" value="Sign  In" />
        </div>
      </form>
      <div class="auth__alternative">
-       <p>Already have an Account?</p>
-       <a href="{%url 'login'%}">Log In</a>
+       <p  style="color:#583461"> Already have an Account?</p>
+       <a  style="color:#583461" href="{%url 'login'%}">Log In</a>
      </div>
    </div>
  </div>
@@ -47,8 +47,8 @@
       <a href="/">
         <img src="{% static 'images/logo3.png'%}" alt="icon" />
       </a>
-      <h3 style="color:#30323d">Account Login</h3>
-      <p style="color:#30323d">Hello User, Welcome Back!</p>
+      <h3 style="color:#583461">Account Login</h3>
+      <p style="color:#583461">Hello User, Welcome Back!</p>
     </div>
 
     <form action="{% url 'login'%}" method="POST" class="form auth__form">
