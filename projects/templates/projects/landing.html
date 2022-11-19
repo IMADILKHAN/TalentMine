@@ -175,7 +175,9 @@
                 animation-name: fade;
                 animation-duration: 1s;
                 }
-
+        .logo_for_mob{
+            display: None;
+        }
         @keyframes fade {
             from {opacity: .9}
             to {opacity: 1}
@@ -184,6 +186,13 @@
         @media only screen and (max-width:800px){
             #left_side{
                 display: none;
+            }
+            .logo_for_mob{
+                display: block;
+                padding-left: 5rem;
+            }
+            .text{
+                top:30%;
             }
         }
 
@@ -266,8 +275,10 @@
                 <div class="slideshow-container" >
                   <!-- Full-width images with number and caption text -->
                   <div class="mySlides fade">
-                    <div class="text">
 
+
+                    <div class="text">
+                        <h1 class="logo_for_mob"  >TalentMine</h1>
                         <div class="slide-wrapper">
                             <h3 class="slide-subtitle">____Explore TalentMine</h3>
                             <h2 class="slide-title">Find Out Whats Trending</h2>
@@ -282,7 +293,7 @@
 
                   <div class="mySlides fade">
                       <div class="text">
-
+                          <h1 class="logo_for_mob"   >TalentMine</h1>
                           <div class="slide-wrapper">
                               <h3 class="slide-subtitle">____ View Jobs</h3>
                               <h2 class="slide-title">Look at The Top Jobs Available</h2>
@@ -297,7 +308,7 @@
 
                   <div class="mySlides fade">
                       <div class="text">
-
+                          <h1 class="logo_for_mob"   >TalentMine</h1>
                           <div class="slide-wrapper">
                               <h3 class="slide-subtitle">__ Hire From TalentMine</h3>
                               <h2 class="slide-title">Make Your Recruitment Process Smoother</h2>
