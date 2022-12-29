@@ -82,22 +82,10 @@ WSGI_APPLICATION = 'devDirectory.wsgi.application'
 
 
 # SQLlite DATABASE
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-# postgresql database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql' ,
-        'NAME': 'postgres' ,
-        'USER':'postgres',
-        'PASSWORD':'YOYOadil14*',
-        'HOST':'talentmine.c9xkqvyyqbuz.ap-south-1.rds.amazonaws.com',
-        'PORT':'5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -138,8 +126,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST ='smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER ='talentmiiine@gmail.com'
-EMAIL_HOST_PASSWORD = 'zsiqinptqowosbju'
+EMAIL_HOST_USER ='put your email here'
+EMAIL_HOST_PASSWORD = 'put your password'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -151,17 +139,6 @@ STATICFILES_DIRS = [
     BASE_DIR +'/' + 'static'
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-AWS_QUERYSTRING_AUTH = False
-AWS_S3_FILE_OVERWRITE = False
-AWS_ACCESS_KEY_ID = "AKIATXFJG7MLZHSEV52S"
-AWS_SECRET_ACCESS_KEY = "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"
-
-AWS_STORAGE_BUCKET_NAME = "talentmine-bucket"
 
 
 if os.getcwd() == '/app':
