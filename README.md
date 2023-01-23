@@ -1,14 +1,15 @@
-# romeBuddy
+# TalentMine
 
- *romeBuddy is an experience booking website* 
- *romeBuddy is hybrid webapp that allows user to book and offer bunch of custom experiences!*
+ *TalentMine Is A Recruiting Solution Provider* 
+ *TalentMine Is a web app where Users can find and post a job, hire or get hired, review other people’s work
+and chat*
  
 _following are the techonlogies used_
  
- * Angular.
- * Ionic.
- * Capacitor.
- * firebase.
+ * Django.
+ * JavaScript.
+ * PostGress.
+ * AWS.
  
 
 
@@ -19,6 +20,8 @@ _following are the techonlogies used_
  _ Steps to use this project_
  
  * Download the repository
- * Install angular and ionic 
- * then type:- ng run or ionic run 
+ * type:- pip install requirements
+ * type:- python manage.py makemigrations
+ * type:- python manage.py migrate
+ * type:- python manage.py runserver
  * website will launch on port 8000
